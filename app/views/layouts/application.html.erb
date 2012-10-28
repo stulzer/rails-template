@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <%= favicon %>
+    <%= javascript_include_tag "html5" %>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <section id="main">
+      <%= flash_messages %>
+      <%= yield %>
+    </section>
+    <%= javascript_include_tag "application" %>
+    <%= yield :bottom %>
+    <%= analytics "UA-XXXXX" %>
+  </body>
+</html>
