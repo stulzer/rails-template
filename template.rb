@@ -43,8 +43,7 @@ run "rm app/assets/stylesheets/screen.css.scss app/assets/stylesheets/print.css.
 # basic js files
 get_file "app/assets/javascripts/html5.js"
 run "curl https://raw.github.com/jzaefferer/jquery-validation/master/jquery.validate.js > vendor/assets/javascripts/jquery.validate.js"
-run "mkdir vendor/assets/javascripts/validate"
-run "mkdir vendor/assets/javascripts/validate/localization"
+run "mkdir -p vendor/assets/javascripts/validate/localization"
 get_file "vendor/assets/javascripts/validate/localization/messages_pt_BR.js"
 
 # guard configuration
