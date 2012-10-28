@@ -6,6 +6,8 @@ def template_url
   "https://github.com/stulzer/rails-template/raw/master"
 end
 
+run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb"
+
 get_file 'Gemfile'
 run 'bundle install'
 
