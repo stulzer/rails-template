@@ -5,3 +5,12 @@
 @import "bootstrap/function.css.scsss";
 @import "bootstrap/mixin.css.scsss";
 @import "bootstrap/sprite.css.scsss";
+
+// responsiveness
+body {
+  font-size: 100%/1.5;
+}
+
+@import "tablet.css.scss";
+@import "mobile-wide.css.scss";
+@import "mobile.css.scss";
