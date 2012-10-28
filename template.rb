@@ -6,7 +6,7 @@ def template_url
   "https://github.com/stulzer/rails-template/raw/master"
 end
 
-run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb"
+run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css"
 
 get_file 'Gemfile'
 run 'bundle install'
@@ -30,6 +30,8 @@ get_file "app/assets/stylesheets/reset.css.scss"
 get_file "app/assets/stylesheets/bootstrap/functions.css.scss"
 get_file "app/assets/stylesheets/bootstrap/mixins.css.scss"
 get_file "app/assets/stylesheets/bootstrap/sprites.css.scss"
+get_file "app/assets/stylesheets/application.css"
+get_file "app/assets/stylesheets/application-module.css.scss"
 
 # compass stuff
 run "bundle exec compass init"
