@@ -11,6 +11,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'jasmine'
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'guard-livereload'

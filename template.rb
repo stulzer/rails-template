@@ -52,6 +52,9 @@ get_file "Guardfile"
 # rspec
 generate "rspec:install"
 
+# jasmine
+generate "jasmine:install"
+
 # removing index
 run "rm public/index.html"
 
