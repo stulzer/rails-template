@@ -52,6 +52,12 @@ get_file "app/views/layouts/admin.html.erb"
 run "mkdir -p app/controllers/admin"
 get_file "app/controllers/admin/base_controller.rb"
 
+# basic icons images files
+run "mkdir app/assets/images/icons"
+get_file "app/aseets/images/icons/twitter.png"
+get_file "app/aseets/images/icons/mail.png"
+get_file "app/aseets/images/icons/facebook.png"
+
 inject_into_file "config/application.rb",
   "\nconfig.assets.precompile += %w( 'admin/module.js', 'admin/module.css.scss' )",
   :after => "config.assets.enabled = true"
