@@ -11,6 +11,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'jasmine'
   gem 'rspec-rails'
   gem 'guard-rspec'
@@ -24,4 +25,6 @@ group :test do
   gem 'factory_girl'
 end
 
-gem 'mysql2'
+group :production do
+  gem 'mysql2'
+end
