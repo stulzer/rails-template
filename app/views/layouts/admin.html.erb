@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html dir="ltr" lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+    <%= stylesheet_link_tag    "admin/module", :media => "all" %>
+    <%= javascript_include_tag "admin/module" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+
+      <% if notice.present? %>
+        <div id="notice">
+          <p><%= notice %></p>
+        </div>
+      <% end %>
+
+      <% if alert.present? %>
+        <div id="alert">
+          <p><%= alert %></p>
+        </div>
+      <% end %>
+
+      <% if admin_signed_in? %>
+
+        <p id="logout">
+          <%= link_to "#" do %>
+            <span>Q</span> Logout
+          <% end %>
+        </p>
+
+      <% end %>
+
+    </header>
+
+    <div id="sidebar">
+
+      <% if admin_signed_in? %>
+
+        <%= menu do |m| %>
+          <%= m.dashboard admin_root_path do %>
+            Dashboard
+          <% end %>
+        <% end %>
+
+      <% end %>
+
+    </div>
+    <!-- fim do sidebar -->
+    <div id="content">
+
+      <%= yield %>
+
+    </div>
+    <!-- fim do content -->
+
+  </body>
+</html>

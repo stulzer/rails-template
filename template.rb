@@ -14,8 +14,8 @@ run 'bundle install'
 # locales
 get_file "config/locales/rails.pt-BR.yml"
 get_file "config/locales/rails.en.yml"
-get_file "config/locales/devise.pt-BR.yml"
-get_file "config/locales/devise.en.yml"
+get_file "config/locales/devise.views.pt-BR.yml"
+get_file "config/locales/devise.views.en.yml"
 
 # application layout and helper
 get_file "app/views/layouts/application.html.erb"
@@ -35,6 +35,23 @@ get_file "app/assets/stylesheets/mobile.css.scss"
 get_file "app/assets/stylesheets/mobile-wide.css.scss"
 get_file "app/assets/stylesheets/application.css"
 get_file "app/assets/stylesheets/application-module.css.scss"
+
+# basic admin images files
+run "mkdir app/assets/images/admin"
+get_file "app/assets/images/admin/*"
+
+# basic admin assets
+get_file "app/assets/stylesheets/admin/module.css.scss"
+get_file "app/assets/javascripts/admin/module.js"
+get_file "app/views/layouts/admin.html.erb"
+
+# basic admin controllers
+run "mkdir -p app/controllers/admin"
+get_file "app/controllers/admin/base_controller.rb"
+
+inject_into_file "config/application.rb",
+  "config.assets.precompile += %w( 'admin/module.js', 'admin/module.css.scss' )",
+  :after => "config.assets.enabled = true"
 
 # compass stuff
 run "bundle exec compass init"
