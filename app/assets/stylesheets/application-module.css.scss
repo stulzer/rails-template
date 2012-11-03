@@ -7,10 +7,10 @@
 @import "bootstrap/sprites.css.scss";
 
 // responsiveness
-body {
-  font-size: 100%/1.5;
-}
-
 @import "tablet.css.scss";
 @import "mobile-wide.css.scss";
 @import "mobile.css.scss";
+
+body {
+  font-size: 100%/1.5;
+}
