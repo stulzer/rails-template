@@ -7,7 +7,7 @@ gem 'menu_builder'
 group :assets do
   gem 'uglifier'
   gem 'sass-rails'
-  gem 'compass'
+  gem 'compass-rails'
 end
 
 group :development, :test do
