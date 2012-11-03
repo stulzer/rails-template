@@ -53,12 +53,8 @@ run "mkdir -p app/controllers/admin"
 get_file "app/controllers/admin/base_controller.rb"
 
 inject_into_file "config/application.rb",
-  "config.assets.precompile += %w( 'admin/module.js', 'admin/module.css.scss' )",
+  "\nconfig.assets.precompile += %w( 'admin/module.js', 'admin/module.css.scss' )",
   :after => "config.assets.enabled = true"
-
-# compass stuff
-run "bundle exec compass init"
-run "rm app/assets/stylesheets/screen.css.scss app/assets/stylesheets/print.css.scss app/assets/stylesheets/ie.css.scss"
 
 # basic js files
 get_file "app/assets/javascripts/html5.js"
@@ -72,10 +68,13 @@ generate "rspec:install"
 # jasmine
 generate "jasmine:install"
 
-# initiating guard
+# init compass and guard
+run "bundle exec compass init"
 run "bundle exec guard init rspec"
 run "bundle exec guard init livereload"
 run "bundle exec guard init jasmine"
+
+run "rm app/assets/stylesheets/screen.css.scss app/assets/stylesheets/print.css.scss app/assets/stylesheets/ie.css.scss"
 
 # removing index
 run "rm public/index.html"
