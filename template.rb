@@ -38,7 +38,10 @@ get_file "app/assets/stylesheets/application-module.css.scss"
 
 # basic admin images files
 run "mkdir app/assets/images/admin"
-get_file "app/assets/images/admin/*"
+get_file "app/assets/images/admin/bg-sep.gif"
+get_file "app/assets/images/admin/bg.gif"
+get_file "app/assets/images/admin/menu-bg-y.gif"
+get_file "app/assets/images/admin/menu-bg.gif"
 
 # basic admin assets
 get_file "app/assets/stylesheets/admin/module.css.scss"
