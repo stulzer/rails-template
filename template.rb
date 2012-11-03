@@ -46,14 +46,16 @@ run "curl https://raw.github.com/jzaefferer/jquery-validation/master/jquery.vali
 run "mkdir -p vendor/assets/javascripts/validate/localization"
 get_file "vendor/assets/javascripts/validate/localization/messages_pt_BR.js"
 
-# guard configuration
-get_file "Guardfile"
-
 # rspec
 generate "rspec:install"
 
 # jasmine
 generate "jasmine:install"
+
+# initiating guard
+run "bundle exec guard init rspec"
+run "bundle exec guard init livereload"
+run "bundle exec guard init jasmine"
 
 # removing index
 run "rm public/index.html"
