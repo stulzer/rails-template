@@ -80,6 +80,27 @@ img::selection 		{background: transparent;}
 img::-moz-selection	{background: transparent;}
 body {-webkit-tap-highlight-color: rgb(255,255,158);}
 
+@font-face {
+	font-family: "Entypo";
+	src: url("/entypo/entypo.eot");
+	src: local("☺"), url("/entypo/entypo.woff") format("woff"),
+                   url("/entypo/entypo.ttf") format("truetype"),
+                   url("/entypo/entypo.svg#webfontIyfZbseF") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "EntypoSocial";
+	src: url("/entypo/entypo-social.eot");
+	src: local("☺"), url("/entypo/entypo-social.woff") format("woff"),
+                   url("/entypo/entypo-social.ttf") format("truetype"),
+                   url("/entypo/entypo-social.svg#webfontIyfZbseF") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 // Admin
 
 body{

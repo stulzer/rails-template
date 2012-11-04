@@ -52,15 +52,30 @@ get_file "app/views/layouts/admin.html.erb"
 run "mkdir -p app/controllers/admin"
 get_file "app/controllers/admin/base_controller.rb"
 
+# adding basic admin fonts
+run "mkdir -p app/assets/fonts/entypo"
+get_file "app/assets/fonts/entypo/entypo.eot"
+get_file "app/assets/fonts/entypo/entypo.svg"
+get_file "app/assets/fonts/entypo/entypo.ttf"
+get_file "app/assets/fonts/entypo/entypo.woff"
+get_file "app/assets/fonts/entypo/entypo-social.eot"
+get_file "app/assets/fonts/entypo/entypo-social.svg"
+get_file "app/assets/fonts/entypo/entypo-social.ttf"
+get_file "app/assets/fonts/entypo/entypo-social.woff"
+
+# aditional assets files
+inject_into_file "config/application.rb",
+  "\n\n # aditional assets
+  \nconfig.assets.precompile += %w( 'admin/module.js', 'admin/module.css.scss', .svg, .eot, .woff, .ttf )\n
+  \n # Fonts path
+  \n config.assets.paths << '#{Rails.root}/app/assets/fonts'\n",
+  :after => "config.assets.enabled = true"
+
 # basic icons images files
 run "mkdir app/assets/images/icons"
 get_file "app/assets/images/icons/twitter.png"
 get_file "app/assets/images/icons/mail.png"
 get_file "app/assets/images/icons/facebook.png"
-
-inject_into_file "config/application.rb",
-  "\nconfig.assets.precompile += %w( 'admin/module.js', 'admin/module.css.scss' )",
-  :after => "config.assets.enabled = true"
 
 # basic js files
 get_file "app/assets/javascripts/html5.js"
