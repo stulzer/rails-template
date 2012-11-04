@@ -68,7 +68,7 @@ inject_into_file "config/application.rb",
   "\n\n # aditional assets
   \nconfig.assets.precompile += %w( 'admin/module.js', 'admin/module.css.scss', .svg, .eot, .woff, .ttf )\n
   \n # Fonts path
-  \n config.assets.paths << '#{Rails.root}/app/assets/fonts'\n",
+  \n config.assets.paths << '\#{Rails.root}/app/assets/fonts'\n",
   :after => "config.assets.enabled = true"
 
 # basic icons images files
