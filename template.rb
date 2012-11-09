@@ -25,7 +25,7 @@ run "mkdir -p app/views/shared"
 get_file "app/views/shared/_error_messages.html.erb"
 
 # basic sass files
-get_file "app/assets/stylesheets/reset.css.scss"
+get_file "app/assets/stylesheets/normalize.css.scss"
 get_file "app/assets/stylesheets/bootstrap/functions.css.scss"
 get_file "app/assets/stylesheets/bootstrap/mixins.css.scss"
 get_file "app/assets/stylesheets/bootstrap/sprites.css.scss"
