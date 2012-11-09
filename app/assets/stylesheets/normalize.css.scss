@@ -374,10 +374,16 @@ table {
   border-spacing: 0;
 }
 
+/*
+ * Remove the outline.
+ */
 input, object, textarea{
 	outline: none;
 }
 
+/*
+ * textareas don't resize anymore.
+ */
 textarea{
 	resize: none;
 }
