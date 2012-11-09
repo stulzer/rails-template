@@ -373,3 +373,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+input, object, textarea{
+	outline: none;
+}
+
+textarea{
+	resize: none;
+}
