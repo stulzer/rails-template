@@ -73,9 +73,12 @@ get_file "app/presenters/base_presenter.rb"
 
 # basic icons images files
 run "mkdir app/assets/images/icons"
-get_file "app/assets/images/icons/twitter.png"
-get_file "app/assets/images/icons/mail.png"
-get_file "app/assets/images/icons/facebook.png"
+get_file "app/assets/images/icons/block_16.png"
+get_file "app/assets/images/icons/block_64.png"
+get_file "app/assets/images/icons/tick_16.png"
+get_file "app/assets/images/icons/tick_64.png"
+get_file "app/assets/images/icons/warning_16.png"
+get_file "app/assets/images/icons/warning_64.png"
 
 # basic js files
 get_file "app/assets/javascripts/html5.js"

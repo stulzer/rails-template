@@ -1,4 +1,4 @@
-$icon-sprite: sprite-map("icons/*.png", $spacing: 16px, $repeat: no-repeat, $layout: smart);
+$icon-sprite: sprite-map("icons/*.png", $spacing: 64px, $repeat: no-repeat, $layout: smart);
 
 // usage
 // background: sprite($icon-sprite, name_of_png_without_extension) no-repeat;
