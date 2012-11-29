@@ -51,6 +51,9 @@ get_file "app/views/layouts/admin.html.erb"
 run "mkdir -p app/controllers/admin"
 get_file "app/controllers/admin/base_controller.rb"
 
+# admin helper
+get_file "app/helpers/admin_helper.rb"
+
 # adding basic admin fonts
 run "mkdir -p app/assets/fonts/entypo"
 get_file "app/assets/fonts/entypo/entypo.eot"
