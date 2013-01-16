@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.11'
 gem 'jquery-rails'
 gem 'menu_builder'
+gem 'mysql2'
 
 group :assets do
   gem 'uglifier'
@@ -11,20 +12,19 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'jasmine'
   gem 'rspec-rails'
+  gem 'spork'
+  gem 'guard-spork'
   gem 'guard-rspec'
   gem 'guard-jasmine'
   gem 'guard-livereload'
+  gem 'rb-fsevent'
+  gem 'capybara'
 end
 
 group :test do
-  gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-end
-
-group :production do
-  gem 'mysql2'
+  gem 'launchy'
 end
