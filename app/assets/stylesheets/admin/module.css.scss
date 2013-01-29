@@ -82,24 +82,23 @@ body {-webkit-tap-highlight-color: rgb(255,255,158);}
 
 @font-face {
 	font-family: "Entypo";
-  src: url(font-path('admin/entypo.eot') + "?#iefix") format('embedded-opentype'),
-       url(font-path('admin/entypo.woff')) format('woff'),
-       url(font-path('admin/entypo.ttf'))  format('truetype'),
-       url(font-path('admin/entypo.svg') + "#entypo") format('svg');
+	src: url("/entypo/entypo.eot");
+	src: local("☺"), url("/entypo/entypo.woff") format("woff"),
+                   url("/entypo/entypo.ttf") format("truetype"),
+                   url("/entypo/entypo.svg#webfontIyfZbseF") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "EntypoSocial";
-  src: url(font-path('admin/entypo-social.eot') + "?#iefix") format('embedded-opentype'),
-       url(font-path('admin/entypo-social.woff')) format('woff'),
-       url(font-path('admin/entypo-social.ttf'))  format('truetype'),
-       url(font-path('admin/entypo-social.svg') + "#entypo") format('svg');
+	src: url("/entypo/entypo-social.eot");
+	src: local("☺"), url("/entypo/entypo-social.woff") format("woff"),
+                   url("/entypo/entypo-social.ttf") format("truetype"),
+                   url("/entypo/entypo-social.svg#webfontIyfZbseF") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
-
 
 // Admin
 

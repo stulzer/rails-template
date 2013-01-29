@@ -67,7 +67,7 @@ get_file "app/assets/fonts/admin/entypo-social.woff"
 
 # aditional assets files
 inject_into_file "config/application.rb",
-  "\n\n    # aditional assets \n    config.assets.precompile += %w( 'admin/module.js', 'admin/module.css.scss', .svg, .eot, .woff, .ttf )\n    # Fonts path \n    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')",
+  "\n\n    # aditional assets \n    config.assets.precompile += %w( 'admin/module.js', 'admin/module.css.scss', .svg, .eot, .woff, .ttf )\n    # Fonts path \n    config.assets.paths << '#{Rails.root}/app/assets/fonts'",
   :after => "config.assets.enabled = true"
 
 # creating presenters
@@ -109,7 +109,7 @@ run "rm public/index.html"
 application <<-GENERATORS
 config.generators do |g|
   g.test_framework :rspec, :fixture => false, :views => false
-  g.fixture_replacement :factory_girl, :dir => "spec/support/factories"
+  g.fixture_replacement :factory_girl, :dir => "spec/factories"
 end
 
 config.action_mailer.default_url_options = { :host => "localhost:3000" }
