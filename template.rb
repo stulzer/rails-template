@@ -55,15 +55,15 @@ get_file "app/controllers/admin/base_controller.rb"
 get_file "app/helpers/admin_helper.rb"
 
 # adding basic admin fonts
-run "mkdir -p app/assets/fonts/admin"
-get_file "app/assets/fonts/admin/entypo.eot"
-get_file "app/assets/fonts/admin/entypo.svg"
-get_file "app/assets/fonts/admin/entypo.ttf"
-get_file "app/assets/fonts/admin/entypo.woff"
-get_file "app/assets/fonts/admin/entypo-social.eot"
-get_file "app/assets/fonts/admin/entypo-social.svg"
-get_file "app/assets/fonts/admin/entypo-social.ttf"
-get_file "app/assets/fonts/admin/entypo-social.woff"
+run "mkdir -p app/assets/fonts/entypo"
+get_file "app/assets/fonts/entypo/entypo.eot"
+get_file "app/assets/fonts/entypo/entypo.svg"
+get_file "app/assets/fonts/entypo/entypo.ttf"
+get_file "app/assets/fonts/entypo/entypo.woff"
+get_file "app/assets/fonts/entypo/entypo-social.eot"
+get_file "app/assets/fonts/entypo/entypo-social.svg"
+get_file "app/assets/fonts/entypo/entypo-social.ttf"
+get_file "app/assets/fonts/entypo/entypo-social.woff"
 
 # aditional assets files
 inject_into_file "config/application.rb",
