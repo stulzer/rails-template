@@ -25,8 +25,8 @@
       <% if admin_signed_in? %>
 
         <p id="logout">
-          <%= link_to "#" do %>
-            <span>Q</span> Logout
+          <%= link_to destroy_admin_session_path, :method => :delete do %>
+            <span>&#59201;</span> Logout
           <% end %>
         </p>
 
@@ -40,6 +40,7 @@
 
         <%= menu do |m| %>
           <%= m.dashboard admin_root_path do %>
+            <span>&#128711;</span>
             Dashboard
           <% end %>
         <% end %>
