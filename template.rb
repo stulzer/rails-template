@@ -67,7 +67,7 @@ get_file "app/assets/fonts/entypo/entypo-social.woff"
 
 # aditional assets files
 inject_into_file "config/application.rb",
-  "\n\n    # aditional assets \n    config.assets.precompile += %w( 'admin/module.js', 'admin/module.css', .svg, .eot, .woff, .ttf )\n    # Fonts path \n    config.assets.paths << '\#{Rails.root}/app/assets/fonts'",
+  "\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', .svg, .eot, .woff, .ttf ]\n    # Fonts path \n    config.assets.paths << '\#{Rails.root}/app/assets/fonts'",
   :after => "config.assets.enabled = true"
 
 # creating presenters
@@ -77,11 +77,11 @@ get_file "app/presenters/base_presenter.rb"
 # basic icons images files
 run "mkdir app/assets/images/icons"
 get_file "app/assets/images/icons/block_16.png"
-get_file "app/assets/images/icons/block_64.png"
+get_file "app/assets/images/icons/block_32.png"
 get_file "app/assets/images/icons/tick_16.png"
-get_file "app/assets/images/icons/tick_64.png"
+get_file "app/assets/images/icons/tick_32.png"
 get_file "app/assets/images/icons/warning_16.png"
-get_file "app/assets/images/icons/warning_64.png"
+get_file "app/assets/images/icons/warning_32.png"
 
 # basic js files
 get_file "app/assets/javascripts/html5.js"
