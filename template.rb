@@ -67,7 +67,7 @@ get_file "app/assets/fonts/entypo/entypo-social.woff"
 
 # aditional assets files
 inject_into_file "config/application.rb",
-  "\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', .svg, .eot, .woff, .ttf ]\n    # Fonts path \n    config.assets.paths << '\#{Rails.root}/app/assets/fonts'",
+  "\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]\n    # Fonts path \n    config.assets.paths << '\#{Rails.root}/app/assets/fonts'",
   :after => "config.assets.enabled = true"
 
 # creating presenters
