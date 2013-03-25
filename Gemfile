@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'menu_builder'
-gem 'mysql2'
+gem 'pg'
 
 group :assets do
   gem 'uglifier'
