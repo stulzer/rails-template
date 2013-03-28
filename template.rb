@@ -3,7 +3,7 @@ def get_file(file)
 end
 
 def template_url
-  "https://github.com/stulzer/rails-template/raw/master"
+  "https://github.com/stulzer/rails-template/raw/rails4"
 end
 
 run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css"
