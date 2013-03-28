@@ -6,7 +6,7 @@ def template_url
   "https://github.com/stulzer/rails-template/raw/rails4"
 end
 
-run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css"
+run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml"
 
 get_file 'Gemfile'
 
@@ -89,6 +89,25 @@ run "curl https://raw.github.com/jzaefferer/jquery-validation/master/jquery.vali
 run "mkdir -p vendor/assets/javascripts/validate/localization"
 get_file "vendor/assets/javascripts/validate/localization/messages_pt_BR.js"
 
+application <<-GENERATORS
+config.generators do |g|
+  g.test_framework :rspec, :fixture => false, :views => false
+  g.fixture_replacement :factory_girl, :dir => "spec/factories"
+end
+
+config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
+GENERATORS
+
+# git
+
+git :init
+git :add => '.'
+git :commit => '-am "Initial commit"'
+
+# bundling
+run "bundle install"
+
 # rspec
 generate "rspec:install"
 
@@ -105,22 +124,6 @@ run "rm app/assets/stylesheets/screen.css.scss app/assets/stylesheets/print.css.
 
 # removing index
 run "rm public/index.html"
-
-application <<-GENERATORS
-config.generators do |g|
-  g.test_framework :rspec, :fixture => false, :views => false
-  g.fixture_replacement :factory_girl, :dir => "spec/factories"
-end
-
-config.action_mailer.default_url_options = { :host => "localhost:3000" }
-
-GENERATORS
-
-# git
-
-git :init
-git :add => '.'
-git :commit => '-am "Initial commit"'
 
 puts "=================================="
 puts "FINISHED"
