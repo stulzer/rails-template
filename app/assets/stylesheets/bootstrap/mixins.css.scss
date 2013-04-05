@@ -12,6 +12,17 @@
   }
 }
 
+
+
+// Retina sprite support
+// -------------------------
+// Source: http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size
+@mixin retina-sprite($percent) {
+  -webkit-background-size: $percent auto;
+     -moz-background-size: $percent auto;
+          background-size: $percent auto;
+}
+
 // CSS image replacement
 // -------------------------
 // Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
