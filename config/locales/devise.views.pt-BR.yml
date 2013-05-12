@@ -1,11 +1,18 @@
 pt-BR:
   devise:
+    failure:
+      admin:
+        invalid: "Preencha os campos corretamente"
+        unauthenticated: "Por favor, identifique-se"
+        not_found_in_database: "Admin não encontrado"
     confirmations:
       new:
         title: Reenviar instruções de confirmação
         submit: Reenviar instruções de confirmação
       link: Não recebeu instruções de confirmação?
     passwords:
+      admin:
+        send_instructions: Confira sua caixa de entrada.
       edit:
         title: Mudar sua senha
         submit: Mudar minha senha
@@ -26,9 +33,15 @@ pt-BR:
         title: Registrar
         submit: Registrar
     sessions:
+      admin:
+        signed_in: "Seja bem-vindo"
+        signed_out: "Deslogou com sucesso"
       new:
         title: Login
         submit: Login
+        email: Email
+        password: Senha
+        remember_me: "Lembrar senha"
       link: Login com {provider}
     unlocks:
       new:
