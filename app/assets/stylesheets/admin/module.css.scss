@@ -346,6 +346,9 @@ header{
           -html-border-radius: 3px;
           -ms-border-radius: 3px;
           border-radius: 3px;
+          width: auto;
+          min-width: auto;
+          padding: 0 3px;
         }
         &:hover{
           color: #fff;
