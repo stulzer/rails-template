@@ -1,26 +1,21 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.0.beta1'
+gem 'rails', '4.0.0.rc1'
 gem 'jquery-rails'
 gem 'menu_builder'
 gem 'pg'
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.0.1'
 
 group :assets do
   gem 'uglifier', '>= 1.0.3'
-  gem 'sass-rails',   '~> 4.0.0.beta1'
-  gem 'compass-rails'
+  gem 'sass-rails', '4.0.0.rc1'
 end
 
 group :development, :test do
-  gem 'jasmine'
-  gem 'rspec-rails'
   gem 'spork'
+  gem 'rspec-rails'
   gem 'guard-spork'
   gem 'guard-rspec'
-  gem 'guard-jasmine'
-  gem 'guard-livereload'
   gem 'rb-fsevent'
   gem 'capybara'
 end
