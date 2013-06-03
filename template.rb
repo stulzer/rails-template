@@ -36,7 +36,7 @@ get_file "app/assets/stylesheets/application.css"
 get_file "app/assets/stylesheets/application-module.css.scss"
 
 # basic admin images files
-run "mkdir app/assets/images/admin"
+run "mkdir -p app/assets/images/admin"
 get_file "app/assets/images/admin/bg-sep.gif"
 get_file "app/assets/images/admin/bg.gif"
 get_file "app/assets/images/admin/menu-bg-y.gif"
