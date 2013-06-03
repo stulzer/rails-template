@@ -101,13 +101,11 @@ git :commit => '-am "Initial commit"'
 run "bundle install"
 
 # rspec
-generate "bundle exec rspec:install"
+generate "rspec:install"
 
 # init guard
 run "bundle exec guard init rspec"
 run "bundle exec guard init livereload"
-
-run "rm app/assets/stylesheets/screen.css.scss app/assets/stylesheets/print.css.scss app/assets/stylesheets/ie.css.scss"
 
 # removing index
 run "rm public/index.html"
