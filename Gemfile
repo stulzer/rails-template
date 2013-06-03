@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0.rc1'
 gem 'jquery-rails'
 gem 'menu_builder'
+gem 'devise'
+gem 'nokogiri'
 gem 'pg'
 gem 'turbolinks'
 

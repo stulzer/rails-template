@@ -103,8 +103,7 @@ run "bundle install"
 # rspec
 generate "bundle exec rspec:install"
 
-# init compass and guard
-run "bundle exec compass init"
+# init guard
 run "bundle exec guard init rspec"
 run "bundle exec guard init livereload"
 
