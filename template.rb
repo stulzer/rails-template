@@ -8,7 +8,7 @@ end
 
 run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml"
 
-get_file 'Gemfile'
+get_file "Gemfile"
 
 # locales
 get_file "config/locales/rails.pt-BR.yml"
@@ -60,10 +60,6 @@ get_file "app/assets/fonts/entypo/entypo.eot"
 get_file "app/assets/fonts/entypo/entypo.svg"
 get_file "app/assets/fonts/entypo/entypo.ttf"
 get_file "app/assets/fonts/entypo/entypo.woff"
-get_file "app/assets/fonts/entypo/entypo-social.eot"
-get_file "app/assets/fonts/entypo/entypo-social.svg"
-get_file "app/assets/fonts/entypo/entypo-social.ttf"
-get_file "app/assets/fonts/entypo/entypo-social.woff"
 
 # aditional assets files
 inject_into_file "config/application.rb",
