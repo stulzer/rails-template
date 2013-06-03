@@ -101,16 +101,12 @@ git :commit => '-am "Initial commit"'
 run "bundle install"
 
 # rspec
-generate "rspec:install"
-
-# jasmine
-generate "jasmine:install"
+generate "bundle exec rspec:install"
 
 # init compass and guard
 run "bundle exec compass init"
 run "bundle exec guard init rspec"
 run "bundle exec guard init livereload"
-run "bundle exec guard init jasmine"
 
 run "rm app/assets/stylesheets/screen.css.scss app/assets/stylesheets/print.css.scss app/assets/stylesheets/ie.css.scss"
 

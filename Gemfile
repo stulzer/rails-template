@@ -14,6 +14,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard-spork'
   gem 'guard-rspec'
+  gem 'guard-livereload'
   gem 'rb-fsevent'
   gem 'capybara'
 end
