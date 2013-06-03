@@ -6,10 +6,8 @@ gem 'menu_builder'
 gem 'pg'
 gem 'turbolinks'
 
-group :assets do
-  gem 'uglifier', '>= 1.0.3'
-  gem 'sass-rails', '4.0.0.rc1'
-end
+gem 'uglifier', '>= 1.0.3'
+gem 'sass-rails', '4.0.0.rc1'
 
 group :development, :test do
   gem 'spork'
