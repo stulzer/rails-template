@@ -9,10 +9,10 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <section id="main">
+    <div id="main">
       <%= flash_messages %>
       <%= yield %>
-    </section>
+    </div>
     <%= javascript_include_tag "application" %>
     <%= yield :bottom %>
     <%= analytics "UA-XXXXX" %>
