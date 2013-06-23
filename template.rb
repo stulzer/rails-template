@@ -81,12 +81,12 @@ run "mkdir -p vendor/assets/javascripts/validate/localization"
 get_file "vendor/assets/javascripts/validate/localization/messages_pt_BR.js"
 
 application <<-GENERATORS
-config.generators do |g|
-  g.test_framework :rspec, :fixture => false, :views => false
-  g.fixture_replacement :factory_girl, :dir => "spec/factories"
-end
+    config.generators do |g|
+      g.test_framework :rspec, :fixture => false, :views => false
+      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+    end
 
-config.action_mailer.default_url_options = { :host => "localhost:3000" }
+    config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
 GENERATORS
 
@@ -103,11 +103,7 @@ run "bundle install"
 generate "rspec:install"
 
 # init guard
-run "bundle exec guard init rspec"
 run "bundle exec guard init livereload"
-
-# removing index
-run "rm public/index.html"
 
 puts "=================================="
 puts "FINISHED"
