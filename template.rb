@@ -62,8 +62,8 @@ get_file "app/assets/fonts/entypo/entypo.woff"
 
 # aditional assets files
 inject_into_file "config/application.rb",
-  "\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]\n    # Fonts path \n    config.assets.paths << '\#{Rails.root}/app/assets/fonts'",
-  :after => "config.assets.enabled = true"
+  "\n\n\n    config.time_zone = \"Brasilia\" \n    config.i18n.available_locales = [:en, :\"pt-BR\"] \n    config.i18n.default_locale = :\"pt-BR\" \n\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]\n    # Fonts path \n    config.assets.paths << '\#{Rails.root}/app/assets/fonts'",
+  :after => "# config.time_zone = 'Central Time (US & Canada)'"
 
 # basic icons images files
 run "mkdir app/assets/images/icons"
