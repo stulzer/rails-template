@@ -76,9 +76,9 @@ get_file "app/assets/images/icons/warning_32.png"
 
 # basic js files
 get_file "app/assets/javascripts/html5.js"
-run "curl https://raw.github.com/jzaefferer/jquery-validation/master/jquery.validate.js > vendor/assets/javascripts/jquery.validate.js"
-run "mkdir -p vendor/assets/javascripts/validate/localization"
-get_file "vendor/assets/javascripts/validate/localization/messages_pt_BR.js"
+run "curl https://raw.github.com/jzaefferer/jquery-validation/master/jquery.validate.js > app/assets/javascripts/jquery.validate.js"
+run "mkdir -p app/assets/javascripts/validate/localization"
+get_file "app/assets/javascripts/validate/localization/messages_pt_BR.js"
 
 application <<-GENERATORS
     config.generators do |g|
