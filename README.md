@@ -1,9 +1,9 @@
 rails-template
 ==============
 
-Template for Rails 3
+Template for Rails 4
 
 Usage
 ==============
 
-rails new app -T -m https://raw.github.com/stulzer/rails-template/master/template.rb
+rails new app -Tm https://github.com/stulzer/rails-template/raw/rails4/template.rb
