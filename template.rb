@@ -3,12 +3,12 @@ def get_file(file)
 end
 
 def template_url
-  "https://github.com/stulzer/rails-template/raw/master"
+  "https://github.com/stulzer/rails-template/raw/rails4"
 end
 
-run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css"
+run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml"
 
-get_file 'Gemfile'
+get_file "Gemfile"
 
 # locales
 get_file "config/locales/rails.pt-BR.yml"
@@ -28,7 +28,6 @@ get_file "app/views/shared/_error_messages.html.erb"
 get_file "app/assets/stylesheets/normalize.css.scss"
 get_file "app/assets/stylesheets/bootstrap/functions.css.scss"
 get_file "app/assets/stylesheets/bootstrap/mixins.css.scss"
-get_file "app/assets/stylesheets/bootstrap/sprites.css.scss"
 get_file "app/assets/stylesheets/tablet.css.scss"
 get_file "app/assets/stylesheets/mobile.css.scss"
 get_file "app/assets/stylesheets/mobile-wide.css.scss"
@@ -36,7 +35,7 @@ get_file "app/assets/stylesheets/application.css"
 get_file "app/assets/stylesheets/application-module.css.scss"
 
 # basic admin images files
-run "mkdir app/assets/images/admin"
+run "mkdir -p app/assets/images/admin"
 get_file "app/assets/images/admin/bg-sep.gif"
 get_file "app/assets/images/admin/bg.gif"
 get_file "app/assets/images/admin/menu-bg-y.gif"
@@ -60,15 +59,11 @@ get_file "app/assets/fonts/entypo/entypo.eot"
 get_file "app/assets/fonts/entypo/entypo.svg"
 get_file "app/assets/fonts/entypo/entypo.ttf"
 get_file "app/assets/fonts/entypo/entypo.woff"
-get_file "app/assets/fonts/entypo/entypo-social.eot"
-get_file "app/assets/fonts/entypo/entypo-social.svg"
-get_file "app/assets/fonts/entypo/entypo-social.ttf"
-get_file "app/assets/fonts/entypo/entypo-social.woff"
 
 # aditional assets files
 inject_into_file "config/application.rb",
-  "\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]\n    # Fonts path \n    config.assets.paths << '\#{Rails.root}/app/assets/fonts'",
-  :after => "config.assets.enabled = true"
+  "\n\n\n    config.time_zone = \"Brasilia\" \n    config.i18n.available_locales = [:en, :\"pt-BR\"] \n    config.i18n.default_locale = :\"pt-BR\" \n\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]\n    # Fonts path \n    config.assets.paths << Rails.root.join(\"app\", \"assets\", \"fonts\")",
+  :after => "# config.time_zone = 'Central Time (US & Canada)'"
 
 # basic icons images files
 run "mkdir app/assets/images/icons"
@@ -81,34 +76,17 @@ get_file "app/assets/images/icons/warning_32.png"
 
 # basic js files
 get_file "app/assets/javascripts/html5.js"
-run "curl https://raw.github.com/jzaefferer/jquery-validation/master/jquery.validate.js > vendor/assets/javascripts/jquery.validate.js"
-run "mkdir -p vendor/assets/javascripts/validate/localization"
-get_file "vendor/assets/javascripts/validate/localization/messages_pt_BR.js"
-
-# rspec
-generate "rspec:install"
-
-# jasmine
-generate "jasmine:install"
-
-# init compass and guard
-run "bundle exec compass init"
-run "bundle exec guard init rspec"
-run "bundle exec guard init livereload"
-run "bundle exec guard init jasmine"
-
-run "rm app/assets/stylesheets/screen.css.scss app/assets/stylesheets/print.css.scss app/assets/stylesheets/ie.css.scss"
-
-# removing index
-run "rm public/index.html"
+run "curl https://raw.github.com/jzaefferer/jquery-validation/master/jquery.validate.js > app/assets/javascripts/jquery.validate.js"
+run "mkdir -p app/assets/javascripts/validate/localization"
+get_file "app/assets/javascripts/validate/localization/messages_pt_BR.js"
 
 application <<-GENERATORS
-config.generators do |g|
-  g.test_framework :rspec, :fixture => false, :views => false
-  g.fixture_replacement :factory_girl, :dir => "spec/factories"
-end
+    config.generators do |g|
+      g.test_framework :rspec, :fixture => false, :views => false
+      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+    end
 
-config.action_mailer.default_url_options = { :host => "localhost:3000" }
+    config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
 GENERATORS
 
@@ -117,6 +95,15 @@ GENERATORS
 git :init
 git :add => '.'
 git :commit => '-am "Initial commit"'
+
+# bundling
+run "bundle install"
+
+# rspec
+generate "rspec:install"
+
+# init guard
+run "bundle exec guard init livereload"
 
 puts "=================================="
 puts "FINISHED"

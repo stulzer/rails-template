@@ -90,17 +90,6 @@ body {-webkit-tap-highlight-color: rgb(255,255,158);}
 	font-style: normal;
 }
 
-@font-face {
-	font-family: "EntypoSocial";
-  src: local("☺"), url(font-path('entypo/entypo-social.eot') + "?#iefix") format('embedded-opentype'),
-       url(font-path('entypo/entypo-social.woff')) format('woff'),
-       url(font-path('entypo/entypo-social.ttf'))  format('truetype'),
-       url(font-path('entypo/entypo-social.svg') + "#entypo") format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-
 // Admin
 
 body{
@@ -475,6 +464,13 @@ ul.list{
         }
       }
     }
+  }
+  a.button{
+    float: none;
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    padding: 4px;
   }
 }
 

@@ -1,32 +1,22 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
-gem 'jquery-rails'
+gem 'rails', '4.0.0.rc2'
+
+gem 'jquery-rails', '3.0.1'
+gem 'devise', '3.0.0.rc'
+gem 'turbolinks', '1.2.0'
+
+gem 'uglifier', '2.1.1'
+gem 'sass-rails', '4.0.0.rc2'
+
 gem 'nokogiri'
 gem 'pg'
 
-# layout
-gem 'menu_builder'
-
-group :assets do
-  gem 'uglifier'
-  gem 'sass-rails'
-end
-
 group :development, :test do
-  gem 'jasmine'
   gem 'rspec-rails'
-  gem 'spork'
-  gem 'rb-fsevent'
   gem 'capybara'
-end
-
-# guards
-group :development, :test do
-  gem 'guard-spork'
-  gem 'guard-rspec'
-  gem 'guard-jasmine'
   gem 'guard-livereload'
+  gem 'rb-fsevent'
 end
 
 group :test do
