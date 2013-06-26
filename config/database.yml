@@ -1,0 +1,18 @@
+development:
+  adapter: postgresql
+  encoding: utf-8
+  database: admin_dev
+  pool: 5
+  host: localhost
+  username: admin_dev
+  password: admin_dev
+
+test:
+  adapter: postgresql
+  encoding: utf-8
+  database: admin_test
+  pool: 5
+  host: localhost
+  username: admin_test
+  password: admin_test
+

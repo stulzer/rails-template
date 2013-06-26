@@ -50,6 +50,9 @@ get_file "app/assets/javascripts/admin/module.js"
 get_file "app/assets/javascripts/admin/meny.js"
 get_file "app/views/layouts/admin.html.erb"
 
+# basic db configuration
+get_file "config/database.yml"
+
 # basic admin controllers
 run "mkdir -p app/controllers/admin"
 get_file "app/controllers/admin/base_controller.rb"
