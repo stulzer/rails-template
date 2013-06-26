@@ -6,7 +6,7 @@ def template_url
   "https://github.com/stulzer/rails-template/raw/master"
 end
 
-run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml"
+run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml config/database.yml"
 
 get_file "Gemfile"
 
