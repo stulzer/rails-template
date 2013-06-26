@@ -3,7 +3,7 @@ def get_file(file)
 end
 
 def template_url
-  "https://github.com/stulzer/rails-template/raw/rails4"
+  "https://github.com/stulzer/rails-template/raw/master"
 end
 
 run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml"
@@ -33,13 +33,6 @@ get_file "app/assets/stylesheets/mobile.css.scss"
 get_file "app/assets/stylesheets/mobile-wide.css.scss"
 get_file "app/assets/stylesheets/application.css"
 get_file "app/assets/stylesheets/application-module.css.scss"
-
-# basic admin images files
-run "mkdir -p app/assets/images/admin"
-get_file "app/assets/images/admin/bg-sep.gif"
-get_file "app/assets/images/admin/bg.gif"
-get_file "app/assets/images/admin/menu-bg-y.gif"
-get_file "app/assets/images/admin/menu-bg.gif"
 
 # basic admin assets
 get_file "app/assets/stylesheets/admin/module.css.scss"
