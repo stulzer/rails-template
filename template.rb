@@ -47,6 +47,7 @@ get_file "app/assets/stylesheets/admin/_buttons.css.scss"
 get_file "app/assets/stylesheets/admin/_forms.css.scss"
 
 get_file "app/assets/javascripts/admin/module.js"
+get_file "app/assets/javascripts/admin/meny.js"
 get_file "app/views/layouts/admin.html.erb"
 
 # basic admin controllers
