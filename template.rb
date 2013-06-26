@@ -72,20 +72,6 @@ inject_into_file "config/application.rb",
   "\n\n\n    config.time_zone = \"Brasilia\" \n    config.i18n.available_locales = [:en, :\"pt-BR\"] \n    config.i18n.default_locale = :\"pt-BR\" \n\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]\n    # Fonts path \n    config.assets.paths << Rails.root.join(\"app\", \"assets\", \"fonts\")",
   :after => "# config.time_zone = 'Central Time (US & Canada)'"
 
-# admin routes
-inject_into_file "config/routes.rb",
-  "     devise_for :admins, :controllers => {
-    :sessions  => 'admin/sessions',
-    :passwords => 'admin/passwords',
-    :unlocks   => 'admin/unlocks'
-  }
-
-  namespace :admin do
-    resources :admins
-    root :to => 'admins#index'
-  end",
-  :before => "# The priority is based upon order of creation: first created -> highest priority."
-
 # basic icons images files
 run "mkdir app/assets/images/icons"
 get_file "app/assets/images/icons/block_16.png"
@@ -125,6 +111,20 @@ generate "devise:install"
 
 # rspec
 generate "rspec:install"
+
+# admin routes
+inject_into_file "config/routes.rb",
+  "     devise_for :admins, :controllers => {
+    :sessions  => 'admin/sessions',
+    :passwords => 'admin/passwords',
+    :unlocks   => 'admin/unlocks'
+  }
+
+  namespace :admin do
+    resources :admins
+    root :to => 'admins#index'
+  end",
+  :before => "# The priority is based upon order of creation: first created -> highest priority."
 
 # init guard
 run "bundle exec guard init livereload"
