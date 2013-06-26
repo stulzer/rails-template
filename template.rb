@@ -114,7 +114,7 @@ generate "devise admin"
 
 # admin routes
 inject_into_file "config/routes.rb",
-  "     devise_for :admins, :controllers => {
+  ", :controllers => {
     :sessions  => 'admin/sessions',
     :passwords => 'admin/passwords',
     :unlocks   => 'admin/unlocks'
@@ -123,8 +123,8 @@ inject_into_file "config/routes.rb",
   namespace :admin do
     resources :admins
     root :to => 'admins#index'
-  end",
-  :before => "# The priority is based upon order of creation: first created -> highest priority."
+  end\n\n",
+  :after => "devise_for :admins"
 
 # init guard
 run "bundle exec guard init livereload"
