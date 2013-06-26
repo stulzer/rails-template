@@ -8,9 +8,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.validate
+//= require turbolinks
 //= require admin/meny
 
-$(document).ready(function() {
+var ready;
+
+ready = function() {
 
   var meny = Meny.create({
     menuElement: document.querySelector( '.meny' ),
@@ -22,4 +25,8 @@ $(document).ready(function() {
 
   $("form").validate();
 
-});
+};
+
+$(document).ready(ready);
+
+$(document).on('page:load', ready);

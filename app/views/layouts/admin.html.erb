@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Admin</title>
-    <%= stylesheet_link_tag    "admin/module", :media => "all" %>
-    <%= javascript_include_tag "admin/module" %>
+    <%= stylesheet_link_tag    "admin/module", :media => "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "admin/module", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -63,13 +63,13 @@
               <p>Nome do Admin</p>
               <ul>
                 <li>
-                <%= link_to "#admins" do %>
+                <%= link_to admin_admins_path do %>
                   <i>&#xf007;</i>
                   <span>Gerenciar Admins</span>
                 <% end %>
                 </li>
                 <li>
-                <%= link_to "#logout" do %>
+                <%= link_to destroy_admin_session_path, :method => :delete do %>
                   <i>&#xf011;</i>
                   <span>Logout</span>
                 <% end %>
