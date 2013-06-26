@@ -100,20 +100,17 @@ application <<-GENERATORS
 
 GENERATORS
 
-# git
-
-git :init
-git :add => '.'
-git :commit => '-am "Initial commit"'
-
 # bundling
 run "bundle install"
+
+# rspec
+generate "rspec:install"
 
 # devise
 generate "devise:install"
 
-# rspec
-generate "rspec:install"
+# devise
+generate "devise admin"
 
 # admin routes
 inject_into_file "config/routes.rb",
@@ -131,6 +128,11 @@ inject_into_file "config/routes.rb",
 
 # init guard
 run "bundle exec guard init livereload"
+
+# git
+git :init
+git :add => '.'
+git :commit => '-am "Initial commit"'
 
 puts "=================================="
 puts "FINISHED"
