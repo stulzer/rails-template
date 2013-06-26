@@ -137,6 +137,8 @@ inject_into_file "config/routes.rb",
 # init guard
 run "bundle exec guard init livereload"
 
+generate "migration add_name_to_admins name"
+
 # git
 git :init
 git :add => '.'
