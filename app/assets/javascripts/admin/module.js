@@ -7,3 +7,19 @@
 //= require html5
 //= require jquery
 //= require jquery_ujs
+//= require jquery.validate
+//= require admin/meny
+
+$(document).ready(function() {
+
+  var meny = Meny.create({
+    menuElement: document.querySelector( '.meny' ),
+    contentsElement: document.querySelector( '.contents' ),
+    position: Meny.getQuery().p || 'left',
+    width: 260,
+    threshold: 40
+  });
+
+  $("form").validate();
+
+});
