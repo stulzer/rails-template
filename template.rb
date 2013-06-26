@@ -53,6 +53,9 @@ get_file "app/views/layouts/admin.html.erb"
 # basic admin controllers
 run "mkdir -p app/controllers/admin"
 get_file "app/controllers/admin/base_controller.rb"
+get_file "app/controllers/admin/passwords_controller.rb"
+get_file "app/controllers/admin/sessions_controller.rb"
+get_file "app/controllers/admin/unlocks_controller.rb"
 
 # admin helper
 get_file "app/helpers/admin_helper.rb"

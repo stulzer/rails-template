@@ -5,6 +5,7 @@ gem 'rails'
 gem 'jquery-rails'
 gem 'devise', '3.0.0.rc'
 gem 'turbolinks'
+gem 'menu_builder'
 
 gem 'uglifier'
 gem 'sass-rails'
