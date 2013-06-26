@@ -46,6 +46,14 @@ get_file "app/assets/stylesheets/admin/_index.css.scss"
 get_file "app/assets/stylesheets/admin/_buttons.css.scss"
 get_file "app/assets/stylesheets/admin/_forms.css.scss"
 
+# basic admin views
+run "mkdir -p app/views/admin app/views/admin/mailer app/views/admin/passwords app/views/admin/sessions app/views/admin/shared"
+get_file "app/views/admin/mailer/reset_password_instructions.html.erb"
+get_file "app/views/admin/passwords/edit.html.erb"
+get_file "app/views/admin/passwords/new.html.erb"
+get_file "app/views/admin/sessions/new.html.erb"
+get_file "app/views/admin/shared/_links.erb"
+
 get_file "app/assets/javascripts/admin/module.js"
 get_file "app/assets/javascripts/admin/meny.js"
 get_file "app/views/layouts/admin.html.erb"
