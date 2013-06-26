@@ -142,3 +142,15 @@
   }
 }
 
+.key{
+  &:before{
+    content: "\f084";
+  }
+}
+
+.key{
+  &:before{
+    content: "\f0a8";
+  }
+}
+

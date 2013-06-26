@@ -8,12 +8,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.validate
+//= require validate/localization/messages_pt_BR
 //= require turbolinks
 //= require admin/meny
 
-var ready;
-
-ready = function() {
+var ready = function() {
 
   var meny = Meny.create({
     menuElement: document.querySelector( '.meny' ),

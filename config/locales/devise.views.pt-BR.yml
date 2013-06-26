@@ -12,6 +12,7 @@ pt-BR:
       link: Não recebeu instruções de confirmação?
     passwords:
       admin:
+        updated: Senha alterada com sucesso. =)
         send_instructions: Confira sua caixa de entrada.
       edit:
         title: Mudar sua senha
@@ -48,3 +49,13 @@ pt-BR:
         title: Reenviar instruções de desbloqueio
         submit: Reenviar instruções de desbloqueio
       link: Não recebeu instruções de desbloqueio?
+  errors:
+    messages:
+      not_saved: Erro
+  activerecord:
+    errors:
+      models:
+        admin:
+          attributes:
+            email:
+              not_found: não encontrado.
