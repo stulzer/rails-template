@@ -120,11 +120,11 @@ git :commit => '-am "Initial commit"'
 # bundling
 run "bundle install"
 
-# rspec
-generate "rspec:install"
-
 # devise
 generate "devise:install"
+
+# rspec
+generate "rspec:install"
 
 # init guard
 run "bundle exec guard init livereload"
