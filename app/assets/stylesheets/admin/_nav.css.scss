@@ -1,0 +1,88 @@
+nav.main, nav.main ul, nav.main ul li{
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+nav.main ul{
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+}
+
+nav.main li ~ li{
+  border-top: 1px solid #ccc;
+}
+
+nav.main li a{
+  float: left;
+  position: relative;
+  color: #666;
+  text-decoration: none;
+  padding: 5px 0;
+  height: 30px;
+  line-height: 30px;
+  @include transition(all .3s ease-in-out);
+  width: 100%;
+
+  i{
+    float: left;
+    position: relative;
+    width: 20px;
+    margin-right: 10px;
+    text-align: center;
+    @include transition(all .3s ease-in-out);
+    margin-left: 10px;
+  }
+
+  &:before{
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 20px 0 20px 10px;
+    border-color: transparent transparent transparent $blue;
+    display: block;
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    @include transition(all .3s ease-in-out);
+  }
+
+  &:hover{
+    color: $blue;
+    i{
+      margin-left: 20px;
+    }
+    &:before{
+      left: 0;
+    }
+  }
+}
+
+nav.main li.current a{
+  color: #fff;
+  border-right: 2px solid #fff;
+  background: $blue;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 40px;
+  &:after{
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 16px 8px 16px 0;
+    border-color: transparent #fff transparent transparent;
+    display: block;
+    content: " ";
+    position: absolute;
+    top: 4px;
+    right: -2px;
+    @include transition(all .3s ease-in-out);
+  }
+  &:hover{
+    i{
+      margin-left: 10px;
+    }
+  }
+}

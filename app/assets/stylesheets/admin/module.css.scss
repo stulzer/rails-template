@@ -11,5 +11,113 @@
  *= require_self
 */
 
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,latin-ext");
+
+html, body{
+  height: 100%;
+  overflow: hidden;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin icons{
+  font-family: "FontAwesome";
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+@import "vars.css.scss";
 @import "normalize.css.scss";
+@import "../bootstrap/mixins.css.scss";
+@import "meny.css.scss";
 @import "font-awesome.css.scss";
+@import "header.css.scss";
+@import "nav.css.scss";
+@import "index.css.scss";
+@import "buttons.css.scss";
+@import "forms.css.scss";
+
+body{
+  @include gradient(#222, #111);
+}
+
+div.right{
+  float: right;
+}
+
+i{
+  @include icons;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  color: lighten($blue, 5%);
+  line-height: 2;
+  margin-bottom: 30px;
+  border-bottom: 1px dotted $blue;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div.contents div.content{
+  padding: 0 10px 0 15px;
+}
+
+div.actions{
+  width: 100%;
+  float: left;
+  position: relative;
+  margin: 10px 0;
+  background: #f1f1f1;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+  a{
+    float: right;
+    position: relative;
+    line-height: 22px;
+    height: 22px;
+  }
+}
+
+p#notice, p#alert{
+  @include border-radius(3px);
+}
+
+p#notice{
+  @extend .button-green;
+  @extend .notice;
+  float: left;
+  position: relative;
+  width: 100%;
+
+  margin: 20px 0 10px 0;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+p#alert{
+  @extend .button-red;
+  @extend .alert;
+  float: left;
+  position: relative;
+  width: 100%;
+
+  margin: 20px 0 10px 0;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}

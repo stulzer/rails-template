@@ -1,0 +1,110 @@
+form, form div.field{
+  width: 100%;
+  float: left;
+  position: relative;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+form div.field{
+  margin-bottom: 20px;
+}
+
+form div.field label{
+  width: 180px;
+  float: left;
+  position: relative;
+  margin-right: 20px;
+  text-align: right;
+
+  height: 30px;
+  line-height: 30px;
+}
+
+form div.field div.for-radio{
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+form div.field input[type="password"],
+form div.field input[type="text"],
+form div.field input[type="file"],
+form div.field select,
+form div.field textarea{
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 5px;
+
+  @include transition(all .5s ease);
+
+  &:focus{
+    border: 1px solid $orange;
+    @include box-shadow(0 0 2px $orange);
+    outline: none;
+  }
+
+  &.error{
+    border: 1px solid $red;
+    @include box-shadow(0 0 2px $red);
+    outline: none;
+  }
+}
+
+form div.field textarea{
+  height: 200px;
+  line-height: 1.5;
+}
+
+form div.field input[type="radio"], form div.field input[type="checkbox"]{
+  float: left;
+  position: relative;
+  text-align: right;
+  margin: 10px 20px 10px 170px;
+  height: 20px;
+}
+
+form div.field input[type="radio"]{
+  margin: 7px 20px 7px 170px;
+}
+
+form div.field label.radio, form div.field label.checkbox{
+  text-align: left;
+  float: left;
+  position: relative;
+}
+
+form div.actions input{
+  margin-left: 190px;
+}
+
+form div.field label.error{
+  width: auto;
+  float: left;
+  text-align: center;
+  color: #fff;
+  background: $red;
+
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  top: 2px;
+  left: 520px;
+
+  padding: 0 10px;
+
+  &:before{
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 7px 5px 7px 0;
+    border-color: transparent $red transparent transparent;
+    display: block;
+    content: " ";
+    position: absolute;
+    top: 8px;
+    left: -5px;
+    @include transition(all .3s ease-in-out);
+  }
+}

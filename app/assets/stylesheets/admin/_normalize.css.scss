@@ -381,14 +381,11 @@ input, object, textarea{
 	outline: none;
 }
 
-/*
- * textareas don't resize anymore.
- */
-textarea{
-	resize: none;
-}
-
 * {
   margin: 0;
   padding: 0;
+}
+
+i{
+  font-style: normal;
 }

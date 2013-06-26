@@ -43,6 +43,16 @@ get_file "app/assets/images/admin/menu-bg.gif"
 
 # basic admin assets
 get_file "app/assets/stylesheets/admin/module.css.scss"
+get_file "app/assets/stylesheets/admin/_vars.css.scss"
+get_file "app/assets/stylesheets/admin/_normalize.css.scss"
+get_file "app/assets/stylesheets/admin/_meny.css.scss"
+get_file "app/assets/stylesheets/admin/_font-awesome.css.scss"
+get_file "app/assets/stylesheets/admin/_header.css.scss"
+get_file "app/assets/stylesheets/admin/_nav.css.scss"
+get_file "app/assets/stylesheets/admin/_index.css.scss"
+get_file "app/assets/stylesheets/admin/_buttons.css.scss"
+get_file "app/assets/stylesheets/admin/_forms.css.scss"
+
 get_file "app/assets/javascripts/admin/module.js"
 get_file "app/views/layouts/admin.html.erb"
 
@@ -54,11 +64,11 @@ get_file "app/controllers/admin/base_controller.rb"
 get_file "app/helpers/admin_helper.rb"
 
 # adding basic admin fonts
-run "mkdir -p app/assets/fonts/entypo"
-get_file "app/assets/fonts/entypo/entypo.eot"
-get_file "app/assets/fonts/entypo/entypo.svg"
-get_file "app/assets/fonts/entypo/entypo.ttf"
-get_file "app/assets/fonts/entypo/entypo.woff"
+run "mkdir -p app/assets/fonts/fontawesome"
+get_file "app/assets/fonts/fontawesome/fontawesome-webfont.eot"
+get_file "app/assets/fonts/fontawesome/fontawesome-webfont.svg"
+get_file "app/assets/fonts/fontawesome/fontawesome-webfont.ttf"
+get_file "app/assets/fonts/fontawesome/fontawesome-webfont.woff"
 
 # aditional assets files
 inject_into_file "config/application.rb",
