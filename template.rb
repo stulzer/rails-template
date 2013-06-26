@@ -123,6 +123,9 @@ run "bundle install"
 # rspec
 generate "rspec:install"
 
+# devise
+generate "devise:install"
+
 # init guard
 run "bundle exec guard init livereload"
 
