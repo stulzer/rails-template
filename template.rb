@@ -135,4 +135,4 @@ git :add => '.'
 git :commit => '-am "Initial commit"'
 
 puts "=================================="
-puts "FINISHED"
+puts "CONFIG THE DATABASE.YML AND MIGRATE"

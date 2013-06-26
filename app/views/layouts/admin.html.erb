@@ -10,69 +10,75 @@
   <body>
 
     <div class="meny">
-      <nav class="main">
-        <%= menu do |m| %>
+      <% if admin_signed_in? %>
+        <nav class="main">
+          <%= menu do |m| %>
 
-          <%= m.admins admin_root_path do %>
-            <i>&#xf007;</i>
-            Admins
+            <%= m.admins admin_root_path do %>
+              <i>&#xf007;</i>
+              Admins
+            <% end %>
+
+            <%= m.test "#" do %>
+              <i>&#xf02b;</i>
+              Products
+            <% end %>
+
+            <%= m.test "#" do %>
+              <i>&#xf03e;</i>
+              Banners
+            <% end %>
+
           <% end %>
-
-          <%= m.test "#" do %>
-            <i>&#xf02b;</i>
-            Products
-          <% end %>
-
-          <%= m.test "#" do %>
-            <i>&#xf03e;</i>
-            Banners
-          <% end %>
-
-        <% end %>
-      </nav>
+        </nav>
+      <% end %>
     </div><!-- end of meny -->
 
-    <div class="meny-arrow"></div>
+    <% if admin_signed_in? %>
+      <div class="meny-arrow"></div>
+    <% end %>
 
     <div class="contents">
 
-      <header class="main">
-        <div class="has-icons">
-          <%= link_to "#" do %>
-            <i>&#xf06c;</i>
-            <p>Stulzer.com Website admin</p>
-          <% end %>
-        </div>
-
-        <div class="right">
-          <div class="has-icons contacts">
+      <% if admin_signed_in? %>
+        <header class="main">
+          <div class="has-icons">
             <%= link_to "#" do %>
-              <i>&#xf0e0;</i>
-              <span><%= Admin.count %></span>
+              <i>&#xf06c;</i>
+              <p>Stulzer.com Website admin</p>
             <% end %>
           </div>
 
-          <div class="admin">
-            <i>&#xf0d7;</i>
-            <small>Bem-vindo,</small>
-            <p>Nome do Admin</p>
-            <ul>
-              <li>
-              <%= link_to "#admins" do %>
-                <i>&#xf007;</i>
-                <span>Gerenciar Admins</span>
+          <div class="right">
+            <div class="has-icons contacts">
+              <%= link_to "#" do %>
+                <i>&#xf0e0;</i>
+                <span><%= Admin.count %></span>
               <% end %>
-              </li>
-              <li>
-              <%= link_to "#logout" do %>
-                <i>&#xf011;</i>
-                <span>Logout</span>
-              <% end %>
-              </li>
-            </ul>
+            </div>
+
+            <div class="admin">
+              <i>&#xf0d7;</i>
+              <small>Bem-vindo,</small>
+              <p>Nome do Admin</p>
+              <ul>
+                <li>
+                <%= link_to "#admins" do %>
+                  <i>&#xf007;</i>
+                  <span>Gerenciar Admins</span>
+                <% end %>
+                </li>
+                <li>
+                <%= link_to "#logout" do %>
+                  <i>&#xf011;</i>
+                  <span>Logout</span>
+                <% end %>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
+      <% end %>
 
       <div class="content">
 
