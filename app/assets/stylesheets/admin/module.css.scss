@@ -32,15 +32,22 @@ body{
 @import "normalize.css.scss";
 @import "../bootstrap/mixins.css.scss";
 @import "meny.css.scss";
+@import "avgrund.css.scss";
 @import "font-awesome.css.scss";
 @import "header.css.scss";
 @import "nav.css.scss";
 @import "index.css.scss";
+@import "confirmable.css.scss";
 @import "buttons.css.scss";
 @import "forms.css.scss";
 
 body{
   @include gradient(#222, #111);
+}
+
+body p{
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 div.right{
@@ -85,6 +92,7 @@ div.actions{
   a{
     line-height: 22px;
     height: 22px;
+    display: inline-block;
   }
 }
 

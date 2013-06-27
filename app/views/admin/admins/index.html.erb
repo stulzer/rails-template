@@ -9,7 +9,7 @@
         <% end %>
         <div class="right">
           <%= link_to_edit [:edit, :admin, admin] %>
-          <%= link_to_destroy [:admin, admin] unless current_admin == admin %>
+          <%= link_to "Deletar", confirm_destroy_admin_admin_path(admin), :data => {:method => :get, :remote => true}, :class => "button-red delete" unless current_admin == admin %>
         </div>
       <% end %>
     <% end %>
@@ -21,3 +21,5 @@
     <%= link_to "Novo Admin", new_admin_admin_path, :class => "button-blue plus" %>
   </div><!-- right -->
 </div><!-- end of actions -->
+
+<div id="avgrund-content" class="avgrund-popup"></div>

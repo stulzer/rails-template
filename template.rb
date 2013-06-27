@@ -138,7 +138,11 @@ inject_into_file "config/routes.rb",
   }
 
   namespace :admin do
-    resources :admins
+    resources :admins do
+      member do
+        get 'confirm_destroy'
+      end
+    end
     root :to => 'admins#index'
   end\n\n",
   :after => "devise_for :admins"

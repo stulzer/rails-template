@@ -19,6 +19,16 @@
               Admins
             <% end %>
 
+            <%= m.test "#" do %>
+              <i>&#xf02b;</i>
+              Products
+            <% end %>
+
+            <%= m.test "#" do %>
+              <i>&#xf03e;</i>
+              Banners
+            <% end %>
+
           <% end %>
         </nav>
       <% end %>
@@ -33,7 +43,7 @@
       <% if admin_signed_in? %>
         <header class="main">
           <div class="has-icons">
-            <%= link_to admin_root_path do %>
+            <%= link_to "#" do %>
               <i>&#xf06c;</i>
               <p>Stulzer.com Website admin</p>
             <% end %>
@@ -43,7 +53,7 @@
             <div class="has-icons contacts">
               <%= link_to "#" do %>
                 <i>&#xf0e0;</i>
-                <span>23</span>
+                <span><%= Admin.count %></span>
               <% end %>
             </div>
 
@@ -82,7 +92,7 @@
 
         <%= yield %>
       </div>
-
     </div><!-- end of contents -->
+    <div class="avgrund-cover"></div>
   </body>
 </html>

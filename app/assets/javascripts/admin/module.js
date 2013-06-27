@@ -11,6 +11,7 @@
 //= require validate/localization/messages_pt_BR
 //= require turbolinks
 //= require admin/meny
+//= require admin/avgrund
 
 var ready = function() {
 
@@ -29,3 +30,8 @@ var ready = function() {
 $(document).ready(ready);
 
 $(document).on('page:load', ready);
+
+$(".cancel-avgrund").on("click", function(event) {
+  event.preventDefault();
+  Avgrund.hide();
+});

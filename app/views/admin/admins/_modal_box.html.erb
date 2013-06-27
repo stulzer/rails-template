@@ -1,0 +1,9 @@
+<div id="confirmable">
+  <h2>Confimação</h2>
+  <p>Você vai deletar o admin <%= @admin.name %>. <br>Tem certeza?</p>
+
+  <div class="button-holder">
+    <button onclick="javascript:Avgrund.hide();" class="button-green back">Cancelar</button>
+    <%= link_to "Deletar", [:admin, @admin], :method => :delete, :class => "button-red check" %>
+  </div><!-- end of button-holder -->
+</div><!-- end of confirmable -->

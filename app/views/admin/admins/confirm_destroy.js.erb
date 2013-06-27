@@ -1,0 +1,4 @@
+$("#avgrund-content *").remove();
+$("#avgrund-content").append("<%= escape_javascript(render "modal_box") %>");
+
+Avgrund.show("#avgrund-content");

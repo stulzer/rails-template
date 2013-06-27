@@ -1,7 +1,7 @@
 class Admin::AdminsController < Admin::BaseController
   menu_item :admins
 
-  before_action :set_admin, :only => [:show, :edit, :update, :destroy]
+  before_action :set_admin, :only => [:show, :edit, :update, :destroy, :confirm_destroy]
 
   def index
     @admins = Admin.all
@@ -26,6 +26,12 @@ class Admin::AdminsController < Admin::BaseController
   def update
     flash[:notice] = 'Admin alterado com sucesso.' if @admin.update_attributes(admin_params)
     respond_with @admin, :location => admin_admins_path
+  end
+
+  def confirm_destroy
+    respond_with @admin do |format|
+      format.js
+    end
   end
 
   def destroy
