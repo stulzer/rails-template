@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '4.0.0'
 
 gem 'jquery-rails'
 gem 'devise', '3.0.0.rc'
 gem 'turbolinks'
 gem 'menu_builder'
 
-gem 'uglifier'
-gem 'sass-rails'
+gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails', '~> 4.0.0'
 
 gem 'nokogiri'
 gem 'pg'
