@@ -25,6 +25,10 @@ var ready = function() {
 
   $("form").validate();
 
+  $(".avgrund-cover").click(function() {
+    Avgrund.hide();
+  });
+
 };
 
 $(document).ready(ready);
