@@ -35,8 +35,10 @@ class Admin::AdminsController < Admin::BaseController
   end
 
   def destroy
-    flash[:alert] = 'Admin deletado com sucesso' if @admin.destroy
-    respond_with @admin, :location => admin_admins_path
+    @admin.destroy
+    respond_with @admin do |format|
+      format.js
+    end
   end
 
   private
