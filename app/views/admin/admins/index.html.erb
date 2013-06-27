@@ -1,0 +1,23 @@
+<h1>Admins</h1>
+
+<ul class="list">
+  <% if @admins.present? %>
+    <% @admins.each do |admin| %>
+      <%= content_tag_for :li, admin, :class => cycle(:odd, :even) do %>
+        <%= link_to [:admin, admin] do %>
+          <%= admin.name %> - <%= admin.email %>
+        <% end %>
+        <div class="right">
+          <%= link_to_edit [:edit, :admin, admin] %>
+          <%= link_to_destroy [:admin, admin] unless current_admin == admin %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>
+
+<div class="actions">
+  <div class="right">
+    <%= link_to "Novo Admin", new_admin_admin_path, :class => "button-blue plus" %>
+  </div><!-- right -->
+</div><!-- end of actions -->

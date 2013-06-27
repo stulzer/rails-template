@@ -47,7 +47,7 @@ get_file "app/assets/stylesheets/admin/_buttons.css.scss"
 get_file "app/assets/stylesheets/admin/_forms.css.scss"
 
 # basic admin views
-run "mkdir -p app/views/admin app/views/admin/mailer app/views/admin/passwords app/views/admin/sessions app/views/admin/shared"
+run "mkdir -p app/views/admin app/views/admin/mailer app/views/admin/passwords app/views/admin/sessions app/views/admin/admins app/views/admin/shared"
 get_file "app/views/admin/mailer/reset_password_instructions.html.erb"
 get_file "app/views/admin/passwords/edit.html.erb"
 get_file "app/views/admin/passwords/new.html.erb"
@@ -67,6 +67,15 @@ get_file "app/controllers/admin/base_controller.rb"
 get_file "app/controllers/admin/passwords_controller.rb"
 get_file "app/controllers/admin/sessions_controller.rb"
 get_file "app/controllers/admin/unlocks_controller.rb"
+
+# basic admin views
+get_file "app/controllers/admin/admins_controller.rb"
+
+get_file "app/controllers/admin/index.html.erb"
+get_file "app/controllers/admin/show.html.erb"
+get_file "app/controllers/admin/new.html.erb"
+get_file "app/controllers/admin/edit.html.erb"
+get_file "app/controllers/admin/_form.html.erb"
 
 # admin helper
 get_file "app/helpers/admin_helper.rb"
