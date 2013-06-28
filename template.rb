@@ -71,11 +71,11 @@ get_file "app/controllers/admin/unlocks_controller.rb"
 # basic admin views
 get_file "app/controllers/admin/admins_controller.rb"
 
-get_file "app/controllers/admin/index.html.erb"
-get_file "app/controllers/admin/show.html.erb"
-get_file "app/controllers/admin/new.html.erb"
-get_file "app/controllers/admin/edit.html.erb"
-get_file "app/controllers/admin/_form.html.erb"
+get_file "app/views/admin/index.html.erb"
+get_file "app/views/admin/show.html.erb"
+get_file "app/views/admin/new.html.erb"
+get_file "app/views/admin/edit.html.erb"
+get_file "app/views/admin/_form.html.erb"
 
 # admin helper
 get_file "app/helpers/admin_helper.rb"
