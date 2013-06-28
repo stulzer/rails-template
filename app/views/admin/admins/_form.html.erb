@@ -19,45 +19,7 @@
     <%= f.password_field :password_confirmation, :class => "required" %>
   </div><!-- end of field -->
 
-  <div class="field">
-    <%= f.check_box :approved %>
-    <%= f.label :approved, :class => "checkbox" %>
-  </div><!-- end of field -->
-
-  <div class="field">
-    <%= f.label :picture %>
-    <%= f.file_field :picture %>
-  </div><!-- end of field -->
-
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.select :state, Admin::STATES, {:prompt => "Escolha um estado."} %>
-  </div><!-- end of field -->
-
-  <h2>Testing</h2>
-
-  <div class="field">
-    <div class="for-radio">
-      <%= radio_button("appointment", "appointment", "consulta", :class => "with-insurance") %>
-      <label for="appointment_appointment_consulta" class="radio">consulta</label>
-    </div>
-
-    <div class="for-radio">
-      <%= radio_button("appointment", "appointment", "pilates", :class => "no-insurance") %>
-      <label for="appointment_appointment_pilates" class="radio">aula de pilates</label>
-    </div>
-
-  </div><!-- end of field -->
-
-  <h2>Descrição</h2>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div><!-- end of field -->
-
   <div class="actions">
     <%= f.submit :class => "button-blue commit" %>
   </div><!-- end of actions -->
-
 <% end %>
