@@ -76,6 +76,9 @@ get_file "app/views/admin/admins/show.html.erb"
 get_file "app/views/admin/admins/new.html.erb"
 get_file "app/views/admin/admins/edit.html.erb"
 get_file "app/views/admin/admins/_form.html.erb"
+get_file "app/views/admin/admins/_modal_box.html.erb"
+get_file "app/views/admin/admins/destroy.js.erb"
+get_file "app/views/admin/admins/confirm_destroy.js.erb"
 
 # admin helper
 get_file "app/helpers/admin_helper.rb"
