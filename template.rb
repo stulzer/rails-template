@@ -45,6 +45,7 @@ get_file "app/assets/stylesheets/admin/_nav.css.scss"
 get_file "app/assets/stylesheets/admin/_index.css.scss"
 get_file "app/assets/stylesheets/admin/_buttons.css.scss"
 get_file "app/assets/stylesheets/admin/_forms.css.scss"
+get_file "app/assets/stylesheets/admin/_confirmable.css.scss"
 get_file "app/assets/stylesheets/admin/_avgrund.css.scss"
 get_file "app/assets/javascripts/admin/avgrund.js"
 
