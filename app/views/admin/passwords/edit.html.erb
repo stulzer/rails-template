@@ -12,11 +12,11 @@
   
     <div class="field">
       <%= f.label :password_confirmation, "Confirmar nova senha" %>
-      <%= f.password_field :password_confirmation, :class => "required" %>
+      <%= f.password_field :password_confirmation, :class => "required", :minlength => 8 %>
     </div>
   
     <div class="actions">
-      <%= f.submit "Mudar minha senha", :class => "button-blue" %>
+      <%= f.submit "Mudar minha senha", :class => "button-blue", :minlength => 8, :equalTo => "#admin_password" %>
       <%= render "admin/shared/links" %>
     </div>
   <% end %>
