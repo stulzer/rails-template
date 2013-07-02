@@ -158,6 +158,10 @@ run "bundle exec guard init livereload"
 
 generate "migration add_name_to_admins name"
 
+
+run "mv spec/spec_helper.rb spec/.spec_helper_backup"
+get_file "spec/spec_helper.rb"
+
 # git
 git :init
 git :add => '.'
@@ -165,3 +169,4 @@ git :commit => '-am "Initial commit"'
 
 puts "=================================="
 puts "CONFIG THE DATABASE.YML AND MIGRATE"
+puts "WARNING REVIEW THE SPEC HELPER FILE"
