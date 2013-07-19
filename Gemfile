@@ -3,12 +3,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 gem 'jquery-rails'
-gem 'devise', '3.0.0.rc'
+gem 'devise'
 gem 'turbolinks'
 gem 'menu_builder'
 
-gem 'uglifier', '>= 1.3.0'
-gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier'
+gem 'sass-rails'
 
 gem 'nokogiri'
 gem 'pg'
