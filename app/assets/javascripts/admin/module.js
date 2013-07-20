@@ -39,3 +39,16 @@ $(".cancel-avgrund").on("click", function(event) {
   event.preventDefault();
   Avgrund.hide();
 });
+
+$(document).on('page:fetch', function() {
+  $("#loading-page").fadeIn();
+});
+
+$(document).on('page:change', function() {
+  $("#loading-page").fadeOut();
+  Avgrund.hide();
+});
+
+$(document).ready(function() {
+  $("#loading-page").fadeOut();
+});
