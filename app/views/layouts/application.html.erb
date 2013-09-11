@@ -6,6 +6,7 @@
     <%= favicon %>
     <%= javascript_include_tag "html5" %>
     <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= dispatcher_tag %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -14,7 +15,6 @@
       <%= yield %>
     </div>
     <%= javascript_include_tag "application" %>
-    <%= yield :bottom %>
     <%= analytics "UA-XXXXX" %>
   </body>
 </html>
