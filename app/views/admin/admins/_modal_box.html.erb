@@ -4,6 +4,6 @@
 
   <div class="button-holder">
     <button onclick="javascript:Avgrund.hide();" class="button-green back">Cancelar</button>
-    <%= link_to "Deletar", [:admin, @admin], :data => {:remote => true}, :method => :delete, :class => "button-red check" %>
+    <%= link_to "Deletar", [:admin, @admin], data: {remote: true}, method: :delete, class: "button-red check" %>
   </div><!-- end of button-holder -->
 </div><!-- end of confirmable -->

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Admin</title>
-    <%= stylesheet_link_tag    "admin/module", :media => "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "admin/module", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "admin/module", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -73,7 +73,7 @@
                 <% end %>
                 </li>
                 <li>
-                <%= link_to destroy_admin_session_path, :method => :delete do %>
+                <%= link_to destroy_admin_session_path, method: :delete do %>
                   <i>&#xf011;</i>
                   <span>Logout</span>
                 <% end %>

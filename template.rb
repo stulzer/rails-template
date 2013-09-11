@@ -96,7 +96,7 @@ get_file "app/assets/fonts/fontawesome/fontawesome-webfont.woff"
 # aditional assets files
 inject_into_file "config/application.rb",
   "\n\n\n    config.time_zone = \"Brasilia\" \n    config.i18n.available_locales = [:en, :\"pt-BR\"] \n    config.i18n.default_locale = :\"pt-BR\" \n\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]\n    # Fonts path \n    config.assets.paths << Rails.root.join(\"app\", \"assets\", \"fonts\")",
-  :after => "# config.time_zone = 'Central Time (US & Canada)'"
+  after: "# config.time_zone = 'Central Time (US & Canada)'"
 
 # basic icons images files
 run "mkdir app/assets/images/icons"
@@ -115,11 +115,11 @@ get_file "app/assets/javascripts/validate/localization/messages_pt_BR.js"
 
 application <<-GENERATORS
     config.generators do |g|
-      g.test_framework :rspec, :fixture => false, :views => false
-      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+      g.test_framework :rspec, fixture: false, views: false
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
-    config.action_mailer.default_url_options = { :host => "localhost:3000" }
+    config.action_mailer.default_url_options = { host: "localhost:3000" }
 
 GENERATORS
 
@@ -137,10 +137,10 @@ generate "devise admin"
 
 # admin routes
 inject_into_file "config/routes.rb",
-  ", :controllers => {
-    :sessions  => 'admin/sessions',
-    :passwords => 'admin/passwords',
-    :unlocks   => 'admin/unlocks'
+  ", controllers: {
+    sessions:  'admin/sessions',
+    passwords: 'admin/passwords',
+    unlocks:   'admin/unlocks'
   }
 
   namespace :admin do
@@ -149,9 +149,9 @@ inject_into_file "config/routes.rb",
         get 'confirm_destroy'
       end
     end
-    root :to => 'admins#index'
+    root to: 'admins#index'
   end\n\n",
-  :after => "devise_for :admins"
+  after: "devise_for :admins"
 
 # init guard
 run "bundle exec guard init livereload"
@@ -164,8 +164,8 @@ get_file "spec/spec_helper.rb"
 
 # git
 git :init
-git :add => '.'
-git :commit => '-am "Initial commit"'
+git add: '.'
+git commit: '-am "Initial commit"'
 
 puts "=================================="
 puts "CONFIG THE DATABASE.YML AND MIGRATE"
