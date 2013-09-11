@@ -8,10 +8,6 @@ module ApplicationHelper
       content_tag(:p, msg, id: key, class: "flash-message")
     end.join.html_safe
   end
-
-  def favicon
-    "<link rel=\"shortcut icon\" href=\"/assets/favicon.png\" />".html_safe
-  end
   
   def analytics(site_id)
     html = <<-ANALYTICS
@@ -35,6 +31,6 @@ module ApplicationHelper
     controller_name.gsub!(/\//, "_")
     controller_name.gsub!(/_controller$/, "")
 
-    %[<meta name="page" content="#{controller_name}##{controller.action_name}" />].html_safe
+    content_tag :meta, "", :name => "page", :content => "#{controller_name}##{controller.action_name}".html_safe
   end
 end
