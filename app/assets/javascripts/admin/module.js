@@ -12,6 +12,7 @@
 //= require turbolinks
 //= require admin/meny
 //= require admin/avgrund
+//= require admin/bootstrap-markdown
 
 var ready = function() {
 
