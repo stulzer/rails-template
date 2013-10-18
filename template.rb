@@ -47,7 +47,9 @@ get_file "app/assets/stylesheets/admin/_buttons.css.scss"
 get_file "app/assets/stylesheets/admin/_forms.css.scss"
 get_file "app/assets/stylesheets/admin/_confirmable.css.scss"
 get_file "app/assets/stylesheets/admin/_avgrund.css.scss"
+get_file "app/assets/stylesheets/admin/_markdown.css.scss"
 get_file "app/assets/javascripts/admin/avgrund.js"
+get_file "app/assets/javascripts/admin/bootstrap-markdown.js"
 
 # basic admin views
 run "mkdir -p app/views/admin app/views/admin/mailer app/views/admin/passwords app/views/admin/sessions app/views/admin/admins app/views/admin/shared"
