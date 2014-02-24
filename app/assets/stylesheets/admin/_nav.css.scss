@@ -63,9 +63,6 @@ nav.main li.current a{
   color: #fff;
   border-right: 2px solid #fff;
   background: $blue;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
   height: 40px;
   &:after{
     width: 0px;

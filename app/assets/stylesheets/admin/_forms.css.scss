@@ -2,9 +2,6 @@ form, form div.field{
   width: 100%;
   float: left;
   position: relative;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 form div.field{
@@ -217,10 +214,6 @@ form div.field label.file-field-multiple{
 
   font-size: 22px;
 
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-
   border: 2px dotted $blue;
 
   display: block;
@@ -251,10 +244,6 @@ form div.upload{
   float: left;
   position: relative;
 
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-
   @include box-shadow(0 0 10px #ccc);
   @include border-radius(5px);
 
@@ -281,9 +270,6 @@ form div.progress{
   width: 99%;
   float: left;
   position: relative;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
   
   background: transparent;
   height: 30px;
@@ -302,9 +288,6 @@ form div.progress{
 form div.progress div.bar{
   float: left;
   position: relative;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
   
   height: 28px;
 

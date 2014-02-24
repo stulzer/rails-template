@@ -2,9 +2,6 @@ ul.list, ul.list li{
   width: 100%;
   float: left;
   position: relative;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 ul.list{
@@ -135,9 +132,6 @@ div.pagination{
   position: relative;
   margin: 10px 0 20px 0;
   padding-right: 5px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 div.pagination nav{
@@ -217,7 +211,6 @@ ul.pics{
 }
 
 ul.pics li{
-  @include box-sizing;
   float: left;
   position: relative;
   width: 23%;
@@ -237,8 +230,6 @@ ul.pics li img{
 }
 
 ul.pics div.options{
-  @include box-sizing;
-
   float: left;
   position: absolute;
   bottom: 0;

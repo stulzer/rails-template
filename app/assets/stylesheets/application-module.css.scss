@@ -19,9 +19,6 @@ p#alert{
   font: 14px Arial, Verdana, Tahoma;
   float: left;
   position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   padding: 10px 10px 10px 35px;
   color: darken(#ca6b1c, 15%);
   @include border-radius(2px);
@@ -35,9 +32,6 @@ p#notice{
   font: 14px Arial, Verdana, Tahoma;
   float: left;
   position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   padding: 10px 10px 10px 35px;
   color: darken(#769d2b, 15%);
   @include border-radius(2px);
