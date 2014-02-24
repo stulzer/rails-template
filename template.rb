@@ -157,7 +157,7 @@ inject_into_file "config/routes.rb",
 
 # adding html responder
 inject_into_file "app/controllers/application_controller.rb",
-  "\n\n respond_to :html",
+  "\n\n  respond_to :html",
   after: "protect_from_forgery with: :exception"
 
 # init guard
