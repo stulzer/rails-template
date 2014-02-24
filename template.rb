@@ -155,6 +155,11 @@ inject_into_file "config/routes.rb",
   end\n\n",
   after: "devise_for :admins"
 
+# adding html responder
+inject_into_file "app/controllers/application_controller.rb",
+  "\n\n respond_to :html",
+  after: "protect_from_forgery with: :exception"
+
 # init guard
 run "bundle exec guard init livereload"
 
