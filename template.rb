@@ -117,11 +117,11 @@ get_file "app/assets/javascripts/validate/localization/messages_pt_BR.js"
 
 application <<-GENERATORS
 config.generators do |g|
-  g.test_framework :rspec, fixture: false, views: false
-  g.fixture_replacement :factory_girl, dir: "spec/factories"
-end
+      g.test_framework :rspec, fixture: false, views: false
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
+    end
 
-config.action_mailer.default_url_options = { host: "localhost:3000" }
+    config.action_mailer.default_url_options = { host: "localhost:3000" }
 GENERATORS
 
 # bundling
@@ -164,9 +164,11 @@ run "bundle exec guard init livereload"
 
 generate "migration add_name_to_admins name"
 
-
 run "mv spec/spec_helper.rb spec/.spec_helper_backup"
 get_file "spec/spec_helper.rb"
+
+run "bundle binstubs rspec-core"
+run "bundle binstubs guard"
 
 # git
 git :init
