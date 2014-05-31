@@ -9,14 +9,22 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 
-gem 'spring', group: :development
-gem 'sdoc', group: :doc
-
 gem 'devise'
 gem 'menu_builder'
 
 gem 'nokogiri'
 gem 'pg'
+
+group :development do
+  gem 'spring'
+  gem 'pry-rails'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+end
 
 group :development, :test do
   gem 'rspec-rails'
@@ -25,8 +33,4 @@ group :development, :test do
   gem 'rb-fsevent'
 end
 
-group :test do
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'launchy'
-end
+gem 'sdoc', group: :doc

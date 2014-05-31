@@ -172,9 +172,7 @@ run "bundle binstubs guard"
 
 # git
 git :init
-git add: '.'
-git commit: '-am "Initial commit"'
 
 puts "=================================="
-puts "CONFIG THE DATABASE.YML AND MIGRATE"
-puts "WARNING REVIEW THE SPEC HELPER FILE"
+puts "CONFIGURE THE DATABASE.YML AND MIGRATE"
+puts "WARNING REVIEW THE SPEC HELPER FILE: specs/spec_helper.rb"
