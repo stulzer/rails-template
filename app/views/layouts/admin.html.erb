@@ -2,7 +2,7 @@
 <html dir="ltr" lang="<%= I18n.locale %>">
   <head>
     <meta charset="utf-8">
-    <title>Admin</title>
+    <title>Stulzer.com - Admin</title>
     <%= stylesheet_link_tag    "admin/module", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "admin/module", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -10,7 +10,7 @@
   <body>
 
     <div id="loading-page">
-      <p><i>&#xf021;</i><%=t("loading") %></p>
+      <p><i>&#xf021;</i><%= t ".loading" %></p>
     </div><!-- end of loading-page -->
 
     <div class="meny">
@@ -49,7 +49,7 @@
           <div class="has-icons">
             <%= link_to "#" do %>
               <i>&#xf06c;</i>
-              <p>Stulzer.com Website admin</p>
+              <p>Stulzer.com - Admin</p>
             <% end %>
           </div>
 
@@ -63,19 +63,19 @@
 
             <div class="admin">
               <i>&#xf0d7;</i>
-              <small>Bem-vindo,</small>
+              <small><%= t ".welcome" %></small>
               <p><%= current_admin.name %></p>
               <ul>
                 <li>
                 <%= link_to admin_admins_path do %>
                   <i>&#xf007;</i>
-                  <span>Gerenciar Admins</span>
+                  <span><%= t ".manage_admins" %></span>
                 <% end %>
                 </li>
                 <li>
                 <%= link_to destroy_admin_session_path, method: :delete do %>
                   <i>&#xf011;</i>
-                  <span>Logout</span>
+                  <span><%= t ".logout" %></span>
                 <% end %>
                 </li>
               </ul>
