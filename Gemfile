@@ -2,13 +2,18 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
 
-gem 'jquery-rails'
-gem 'devise'
-gem 'turbolinks'
-gem 'menu_builder'
-
 gem 'uglifier'
 gem 'sass-rails'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder'
+
+gem 'spring', group: :development
+gem 'sdoc', group: :doc
+
+gem 'devise'
+gem 'menu_builder'
 
 gem 'nokogiri'
 gem 'pg'
