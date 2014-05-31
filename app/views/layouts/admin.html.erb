@@ -10,7 +10,7 @@
   <body>
 
     <div id="loading-page">
-      <p><i>&#xf021;</i><%= t ".loading" %></p>
+      <p><%= icon 'refresh' %><%= t ".loading" %></p>
     </div><!-- end of loading-page -->
 
     <div class="meny">
@@ -19,17 +19,17 @@
           <%= menu do |m| %>
 
             <%= m.admins admin_root_path do %>
-              <i>&#xf007;</i>
+              <%= icon 'user' %>
               Admins
             <% end %>
 
             <%= m.test "#" do %>
-              <i>&#xf02b;</i>
+              <%= icon 'tag' %>
               Products
             <% end %>
 
             <%= m.test "#" do %>
-              <i>&#xf03e;</i>
+              <%= icon 'photo' %>
               Banners
             <% end %>
 
@@ -48,7 +48,7 @@
         <header class="main">
           <div class="has-icons">
             <%= link_to "#" do %>
-              <i>&#xf06c;</i>
+              <%= icon 'leaf' %>
               <p>Stulzer.com - Admin</p>
             <% end %>
           </div>
@@ -56,25 +56,25 @@
           <div class="right">
             <div class="has-icons contacts">
               <%= link_to "#" do %>
-                <i>&#xf0e0;</i>
+                <%= icon 'envelope' %>
                 <span><%= Admin.count %></span>
               <% end %>
             </div>
 
             <div class="admin">
-              <i>&#xf0d7;</i>
+              <%= icon 'caret-down' %>
               <small><%= t ".welcome" %></small>
               <p><%= current_admin.name %></p>
               <ul>
                 <li>
                 <%= link_to admin_admins_path do %>
-                  <i>&#xf007;</i>
+                  <%= icon 'user' %>
                   <span><%= t ".manage_admins" %></span>
                 <% end %>
                 </li>
                 <li>
                 <%= link_to destroy_admin_session_path, method: :delete do %>
-                  <i>&#xf011;</i>
+                  <%= icon 'power-off' %>
                   <span><%= t ".logout" %></span>
                 <% end %>
                 </li>
@@ -87,11 +87,11 @@
       <div class="content">
 
         <% if notice.present? %>
-          <p id="notice"><%= notice %></p>
+          <p id="notice"><%= icon 'check', notice %></p>
         <% end %>
 
         <% if alert.present? %>
-          <p id="alert"><%= alert %></p>
+          <p id="alert"><%= icon 'warning', alert %></p>
         <% end %>
 
         <%= yield %>

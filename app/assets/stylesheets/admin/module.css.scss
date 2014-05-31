@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-awesome
 */
 
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,latin-ext");
@@ -20,12 +21,6 @@ html, body{
 
 body{
   font-family: 'Open Sans', sans-serif;
-}
-
-@mixin icons{
-  font-family: "FontAwesome";
-  font-size: 20px;
-  line-height: 1.5;
 }
 
 @import "vars.css.scss";
@@ -53,11 +48,6 @@ body p{
 
 div.right{
   float: right;
-}
-
-i{
-  @include icons;
-  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6{

@@ -8,6 +8,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'font-awesome-sass'
 
 gem 'devise'
 gem 'menu_builder'
