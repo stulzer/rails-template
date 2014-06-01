@@ -1,9 +1,9 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Voltar a tela de login", new_session_path(resource_name), class: "button-green back" %>
+  <%= link_to (icon 'arrow-circle-left', "Voltar a tela de login"), new_session_path(resource_name), class: "button-green" %>
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-  <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class: "button-red key" %>
+  <%= link_to (icon 'key', "Esqueceu sua senha?"), new_password_path(resource_name), class: "button-red" %>
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

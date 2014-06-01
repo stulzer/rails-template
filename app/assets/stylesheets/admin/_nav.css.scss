@@ -7,6 +7,7 @@ nav.main, nav.main ul, nav.main ul li{
 nav.main ul{
   list-style: none;
   border-bottom: 1px solid #ccc;
+  @include transition(all .3s ease-in-out);
 }
 
 nav.main li ~ li{
@@ -23,16 +24,7 @@ nav.main li a{
   line-height: 30px;
   @include transition(all .3s ease-in-out);
   width: 100%;
-
-  i{
-    float: left;
-    position: relative;
-    width: 20px;
-    margin-right: 10px;
-    text-align: center;
-    @include transition(all .3s ease-in-out);
-    margin-left: 10px;
-  }
+  height: 40px;
 
   &:before{
     width: 0px;
@@ -45,6 +37,11 @@ nav.main li a{
     position: absolute;
     top: 0;
     left: -10px;
+    @include transition(all .3s ease-in-out);
+  }
+
+  i{
+    margin-left: 10px;
     @include transition(all .3s ease-in-out);
   }
 
@@ -77,9 +74,7 @@ nav.main li.current a{
     right: -2px;
     @include transition(all .3s ease-in-out);
   }
-  &:hover{
-    i{
-      margin-left: 10px;
-    }
+  i{
+    margin-left: 20px;
   }
 }

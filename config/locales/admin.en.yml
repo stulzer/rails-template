@@ -5,5 +5,5 @@ en:
     admin: 
       welcome: Welcome
       loading: Loading
-      manage-admins: Manage all Admins
+      manage-admins: Manage Admins
       logout: Logout

@@ -20,6 +20,9 @@
   </div><!-- end of field -->
 
   <div class="actions">
-    <%= f.submit class: "button-blue commit" %>
+    <%= f.button class: "button-blue" do %>
+      <%= icon 'check' %>
+      <%= t ".update" %>
+    <% end %>
   </div><!-- end of actions -->
 <% end %>

@@ -98,39 +98,3 @@
     background: darken($yellow, 10%);
   }
 }
-
-.settings{
-  &:before{
-    content: "\f013";
-  }
-}
-
-.plus{
-  &:before{
-    content: "\f0fe";
-  }
-}
-
-.commit{
-  &:before{
-    content: "\f00c";
-  }
-}
-
-.key{
-  &:before{
-    content: "\f084";
-  }
-}
-
-.back{
-  &:before{
-    content: "\f0a8";
-  }
-}
-
-.check{
-  &:before{
-    content: "\f046";
-  }
-}
