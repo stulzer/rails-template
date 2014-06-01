@@ -9,7 +9,7 @@
         <% end %>
         <div class="right">
           <%= link_to_edit [:edit, :admin, admin] %>
-          <%= link_to_destroy [:edit, :admin, admin] %>
+          <%= link_to (icon 'times', "Deletar"), confirm_destroy_admin_admin_path(admin), data: {method: :get, remote: true}, class: "button-red delete" unless current_admin == admin %>
         </div>
       <% end %>
     <% end %>
