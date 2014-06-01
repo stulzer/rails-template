@@ -1,7 +1,9 @@
 en:
+  edit-button: Edit
+  delete-button: Delete
   layouts:
     admin: 
       welcome: Welcome
       loading: Loading
-      manage_admins: Manage all Admins
+      manage-admins: Manage all Admins
       logout: Logout

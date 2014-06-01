@@ -149,7 +149,7 @@ form div.field div.current-picture{
   height: 80px;
   float: right;
 
-  background: $blue;
+  background: $main-color;
 
   position: absolute;
   top: 2px;
@@ -162,7 +162,7 @@ form div.field div.current-picture{
     height: 0px;
     border-style: solid;
     border-width: 7px 5px 7px 0;
-    border-color: transparent $blue transparent transparent;
+    border-color: transparent $main-color transparent transparent;
     display: block;
     content: " ";
     position: absolute;
@@ -194,7 +194,7 @@ form #product-pictures{
     position: relative;
     width: 150px;
     margin: 0 5px 10px 5px;
-    border: 5px solid $blue;
+    border: 5px solid $main-color;
   }
 }
 
@@ -214,7 +214,7 @@ form div.field label.file-field-multiple{
 
   font-size: 22px;
 
-  border: 2px dotted $blue;
+  border: 2px dotted $main-color;
 
   display: block;
   height: 180px;
@@ -282,7 +282,7 @@ form div.progress{
 
   @include border-radius(5px);
   z-index: 2;
-  border: 1px solid $blue;
+  border: 1px solid $main-color;
 }
 
 form div.progress div.bar{
@@ -300,7 +300,7 @@ form div.progress div.bar{
 
   // background: rgba(200,200,200,.4)
 
-  background-color: $blue;
+  background-color: $main-color;
   background-image:-webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
   background-image:-webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image:-moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);

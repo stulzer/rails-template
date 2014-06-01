@@ -8,7 +8,6 @@
   @include transition(all .8s ease-in-out);
 
   &:before{
-    font-family: "FontAwesome";
     color: #fff;
     margin-right: 10px;
   }
@@ -39,10 +38,10 @@
 
 .button-blue{
   @extend .button;
-  border: 5px solid $blue;
-  background: $blue;
+  border: 5px solid $main-color;
+  background: $main-color;
   &:hover{
-    background: darken($blue, 10%);
+    background: darken($main-color, 10%);
   }
 }
 
@@ -97,30 +96,6 @@
   background: $yellow;
   &:hover{
     background: darken($yellow, 10%);
-  }
-}
-
-.edit{
-  &:before{
-    content: "\f044";
-  }
-}
-
-.delete{
-  &:before{
-    content: "\f00d";
-  }
-}
-
-.alert{
-  &:before{
-    content: "\f071";
-  }
-}
-
-.notice{
-  &:before{
-    content: "\f00c";
   }
 }
 

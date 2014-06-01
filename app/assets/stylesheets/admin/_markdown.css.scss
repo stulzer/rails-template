@@ -26,12 +26,12 @@ div.md-header .btn-small{
   float: left;
   position: relative;
   margin-right: 1px;
-  background: lighten($blue, 10%);
+  background: lighten($main-color, 10%);
   color: #fff;
-  border: 5px solid lighten($blue, 10%);
+  border: 5px solid lighten($main-color, 10%);
 
   &:hover{
-    background: $blue;
+    background: $main-color;
   }
 }
 

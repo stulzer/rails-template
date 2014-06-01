@@ -54,10 +54,10 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   text-rendering: optimizelegibility;
-  color: lighten($blue, 5%);
+  color: lighten($main-color, 5%);
   line-height: 2;
   margin-bottom: 30px;
-  border-bottom: 1px dotted $blue;
+  border-bottom: 1px dotted $main-color;
 }
 
 div.contents div.content{
@@ -75,7 +75,6 @@ div.actions{
 
   a{
     line-height: 22px;
-    height: 22px;
     display: inline-block;
   }
 }
@@ -167,4 +166,8 @@ p#alert{
     -moz-animation: spinoffPulse 1s infinite linear;
     -webkit-animation: spinoffPulse 1s infinite linear;
   }
+}
+
+i.fa{
+  padding: 0 5px 0 0;
 }

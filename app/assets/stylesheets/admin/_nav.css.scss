@@ -39,7 +39,7 @@ nav.main li a{
     height: 0px;
     border-style: solid;
     border-width: 20px 0 20px 10px;
-    border-color: transparent transparent transparent $blue;
+    border-color: transparent transparent transparent $main-color;
     display: block;
     content: " ";
     position: absolute;
@@ -49,7 +49,7 @@ nav.main li a{
   }
 
   &:hover{
-    color: $blue;
+    color: $main-color;
     i{
       margin-left: 20px;
     }
@@ -62,7 +62,7 @@ nav.main li a{
 nav.main li.current a{
   color: #fff;
   border-right: 2px solid #fff;
-  background: $blue;
+  background: $main-color;
   height: 40px;
   &:after{
     width: 0px;
