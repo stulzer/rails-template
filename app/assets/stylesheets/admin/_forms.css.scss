@@ -77,6 +77,18 @@ form div.actions input{
   margin-left: 190px;
 }
 
+form div.actions button input{
+  // reseting input inside button
+  margin: 0;
+  border: 0 solid transparent;
+  padding: 0;
+
+  // inheriting the right rules
+  font: inherit;
+  color: inherit;
+  background: inherit;
+}
+
 form div.field label.error{
   width: auto;
   float: left;
