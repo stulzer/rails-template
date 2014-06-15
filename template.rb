@@ -11,10 +11,17 @@ run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_h
 get_file "Gemfile"
 
 # locales
-get_file "config/locales/rails.pt-BR.yml"
-get_file "config/locales/rails.en.yml"
-get_file "config/locales/devise.views.pt-BR.yml"
-get_file "config/locales/devise.views.en.yml"
+get_file "config/locales/en/rails.yml"
+get_file "config/locales/en/admin.yml"
+get_file "config/locales/en/app.yml"
+get_file "config/locales/en/devise.views.yml"
+get_file "config/locales/en/devise.yml"
+
+get_file "config/locales/pt-BR/rails.yml"
+get_file "config/locales/pt-BR/admin.yml"
+get_file "config/locales/pt-BR/app.yml"
+get_file "config/locales/pt-BR/devise.views.yml"
+get_file "config/locales/pt-BR/devise.yml"
 
 # application layout and helper
 get_file "app/views/layouts/application.html.erb"
@@ -52,12 +59,13 @@ get_file "app/assets/javascripts/admin/avgrund.js"
 get_file "app/assets/javascripts/admin/bootstrap-markdown.js"
 
 # basic admin views
-run "mkdir -p app/views/admin app/views/admin/mailer app/views/admin/passwords app/views/admin/sessions app/views/admin/admins app/views/admin/shared"
-get_file "app/views/admin/mailer/reset_password_instructions.html.erb"
+run "mkdir -p app/views/admin app/views/admin/passwords app/views/admin/sessions app/views/admin/admins app/views/admin/shared app/views/devise/mailer"
 get_file "app/views/admin/passwords/edit.html.erb"
 get_file "app/views/admin/passwords/new.html.erb"
 get_file "app/views/admin/sessions/new.html.erb"
 get_file "app/views/admin/shared/_links.erb"
+get_file "app/views/admin/shared/_modal_box.html.erb"
+get_file "app/views/devise/mailer/reset_password_instructions.html.erb"
 
 get_file "app/assets/javascripts/admin/module.js"
 get_file "app/assets/javascripts/admin/meny.js"
@@ -81,33 +89,16 @@ get_file "app/views/admin/admins/show.html.erb"
 get_file "app/views/admin/admins/new.html.erb"
 get_file "app/views/admin/admins/edit.html.erb"
 get_file "app/views/admin/admins/_form.html.erb"
-get_file "app/views/admin/admins/_modal_box.html.erb"
 get_file "app/views/admin/admins/destroy.js.erb"
 get_file "app/views/admin/admins/confirm_destroy.js.erb"
 
 # admin helper
 get_file "app/helpers/admin_helper.rb"
 
-# adding basic admin fonts
-run "mkdir -p app/assets/fonts/fontawesome"
-get_file "app/assets/fonts/fontawesome/fontawesome-webfont.eot"
-get_file "app/assets/fonts/fontawesome/fontawesome-webfont.svg"
-get_file "app/assets/fonts/fontawesome/fontawesome-webfont.ttf"
-get_file "app/assets/fonts/fontawesome/fontawesome-webfont.woff"
-
 # aditional assets files
 inject_into_file "config/application.rb",
   "\n\n\n    config.time_zone = \"Brasilia\" \n    config.i18n.available_locales = [:en, :\"pt-BR\"] \n    config.i18n.default_locale = :\"pt-BR\" \n\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]\n    # Fonts path \n    config.assets.paths << Rails.root.join(\"app\", \"assets\", \"fonts\")",
   after: "# config.time_zone = 'Central Time (US & Canada)'"
-
-# basic icons images files
-run "mkdir app/assets/images/icons"
-get_file "app/assets/images/icons/block_16.png"
-get_file "app/assets/images/icons/block_32.png"
-get_file "app/assets/images/icons/tick_16.png"
-get_file "app/assets/images/icons/tick_32.png"
-get_file "app/assets/images/icons/warning_16.png"
-get_file "app/assets/images/icons/warning_32.png"
 
 # basic js files
 get_file "app/assets/javascripts/html5.js"
