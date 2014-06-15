@@ -9,7 +9,7 @@
         <% end %>
         <div class="right">
           <%= link_to_edit [:edit, :admin, admin] %>
-          <%= link_to (icon "times", t("delete-button")), confirm_destroy_admin_admin_path(admin), data: {method: :get, remote: true}, class: "button-red delete" unless current_admin == admin %>
+          <%= link_to (icon "times", t("delete_button")), confirm_destroy_admin_admin_path(admin), data: {method: :get, remote: true}, class: "button-red delete" unless current_admin == admin %>
         </div>
       <% end %>
     <% end %>
@@ -18,6 +18,6 @@
 
 <div class="actions">
   <div class="right">
-    <%= link_to (icon "plus", t(".new-admin")), new_admin_admin_path, class: "button-blue" %>
+    <%= link_to (icon "plus", t(".new_admin")), new_admin_admin_path, class: "button-blue" %>
   </div><!-- right -->
-</div><!-- end of actions -->
+</div>

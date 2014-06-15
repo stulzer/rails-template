@@ -8,14 +8,14 @@
     </div>
   
     <div class="field">
-      <%= f.label :password, "Senha" %>
+      <%= f.label :password %>
       <%= f.password_field :password, class: "required" %>
     </div>
   
     <% if devise_mapping.rememberable? -%>
       <div class="field">
         <%= f.check_box :remember_me %>
-        <%= f.label :remember_me, "Lembrar senha", class: "checkbox" %>
+        <%= f.label :remember_me, class: "checkbox" %>
       </div>
     <% end -%>
   
