@@ -5,10 +5,9 @@
     <title></title>
     <%= javascript_include_tag "html5" %>
     <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= dispatcher_tag %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body data-route="<%= dispatcher_route %>">
     <div id="main">
       <%= flash_messages %>
       <%= yield %>

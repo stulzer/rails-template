@@ -24,12 +24,9 @@ module ApplicationHelper
     html.html_safe
   end
 
-  def dispatcher_tag
-    controller_name = controller.class.name.underscore
-    controller_name.gsub!(/\//, "_")
-    controller_name.gsub!(/_controller$/, "")
-
-    content_tag :meta, "", :name => "page", :content => "#{controller_name}##{controller.action_name}".html_safe
+  def dispatcher_route
+    controller_name = controller_path.gsub(/\//, "_")
+    "#{controller_name}##{action_name}"
   end
 
   def translate_attribute(model, attribute)

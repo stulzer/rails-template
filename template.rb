@@ -101,6 +101,9 @@ inject_into_file "config/application.rb",
   after: "# config.time_zone = 'Central Time (US & Canada)'"
 
 # basic js files
+run "rm app/assets/javascripts/application.js"
+get_file "app/assets/javascripts/application.js"
+get_file "app/assets/javascripts/dispatcher.js"
 get_file "app/assets/javascripts/html5.js"
 get_file "app/assets/javascripts/jquery.validate.js"
 run "mkdir -p app/assets/javascripts/validate/localization"
