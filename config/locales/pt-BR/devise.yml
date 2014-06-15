@@ -26,8 +26,6 @@ pt-BR:
         change_my_password: "Mude minha senha."
         warning: "Se você não solicitou por isso, por favor ignore esse email."
         nothing_happens: "Sua senha não será alterada até que você o faça, através do link acima."
-      reset_password_instructions:
-        subject: 'Instruções de troca de senha'
       unlock_instructions:
         subject: 'Instruções de desbloqueio'
     omniauth_callbacks:
