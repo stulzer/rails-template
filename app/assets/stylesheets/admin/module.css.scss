@@ -84,7 +84,6 @@ p#notice, p#alert{
 
 p#notice{
   @extend .button-green;
-  @extend .notice;
   float: left;
   position: relative;
   width: 100%;
@@ -95,7 +94,6 @@ p#notice{
 
 p#alert{
   @extend .button-red;
-  @extend .alert;
   float: left;
   position: relative;
   width: 100%;
@@ -115,7 +113,6 @@ p#alert{
 
   ul li{
     @extend .button-red;
-    @extend .alert;
   }
 }
 
