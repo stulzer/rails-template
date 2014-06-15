@@ -20,6 +20,13 @@ pt-BR:
       confirmation_instructions:
         subject: 'Instruções de confirmação'
       reset_password_instructions:
+        subject: "Instruções de recuperação de senha"
+        hello: "Olá %{name},"
+        presenting_link_to_change: "Alguém solicitou um link para mudar sua senha. Você pode fazer isso através do link abaixo:"
+        change_my_password: "Mude minha senha."
+        warning: "Se você não solicitou por isso, por favor ignore esse email."
+        nothing_happens: "Sua senha não será alterada até que você o faça, através do link acima."
+      reset_password_instructions:
         subject: 'Instruções de troca de senha'
       unlock_instructions:
         subject: 'Instruções de desbloqueio'
