@@ -1,64 +1,113 @@
-// Dispatcher.js - jQuery Dispatcher
-// Copyright (c) 2008-2012 Nando Vieira (nandovieira.com.br)
-// Dual licensed under the MIT (MIT-LICENSE.txt)
-// and GPL (GPL-LICENSE.txt) license
-// How to use it
-//
-// App.users = {};
-//
-// App.users["index"] = function() {
-//   execute specific code for users/index
-// };
-//
-// App.users["new"] = function() {
-//   execute specific code for users/new
-// }
-//
+var Dispatcher = (function(){
+  "use strict";
 
-;(function($){
-  this.App = this.App || {};
-
-  var Dispatcher;
-  Dispatcher = this.Dispatcher = {};
+  function Dispatcher(app, controller, action) {
+    this.app = app || {};
+    this.controller = controller;
+    this.action = action;
+  }
 
   Dispatcher.ALIASES = {
-    "create": "new",
     "update": "edit",
+    "create": "new",
     "destroy": "remove"
   };
 
-  Dispatcher.run = function() {
-    var meta = $("head meta[name=page]"),
-        noMeta = 'No meta tag found. Use something like <meta name="page" content="controller#action" />';
+  Dispatcher.errorReason = function(route) {
+    var reason;
 
-    if (meta.length === 0) {
-      throw(noMeta);
+    if (route === "") {
+      reason = "empty string received";
+    } else if (route === null) {
+      reason = "null received";
+    } else if (route === undefined) {
+      reason = "undefined received";
+    } else {
+      reason = (route.constructor.name || route.toString()) + " received";
     }
 
-    var page = meta.attr("content").toString().split("#"),
-        controllerName = page[0],
-        actionName = page[1];
-
-    actionName = Dispatcher.ALIASES[actionName] || actionName;
-
-    // Executed before every controller action
-    if (App.before) {
-      App.before();
-    }
-
-    if (App[controllerName]) {
-      // Executed before any action from the current controller
-      App[controllerName].before && App[controllerName].before();
-
-      // The current action per-se
-      App[controllerName][actionName] && App[controllerName][actionName]();
-
-      // The after callback for the current controller
-      App[controllerName].after && App[controllerName].after();
-    }
-
-    App.after && App.after();
+    return reason;
   };
 
-  $(document).ready(Dispatcher.run);
-}).call(this, jQuery);
+  Dispatcher.init = function(app) {
+    $(document).on("ready page:load", function(){
+      Dispatcher.run(app, $("body").data("route"));
+    });
+  };
+
+  Dispatcher.run = function(app, route) {
+    var reason;
+
+    if (!route || typeof(route) !== "string") {
+      throw new Error("You have to provide the route like site#index; " + Dispatcher.errorReason(route));
+    }
+
+    new Dispatcher(app).run(route);
+  };
+
+  Dispatcher.compat = function() {
+    var meta = $("head meta[name=page]");
+
+    if (meta.length === 0) {
+      throw new Error('No meta tag found. Use something like <meta name="page" content="controller#action" />');
+    }
+
+    Dispatcher.run(window.App, meta.attr("content"));
+  };
+
+  Dispatcher.prototype.run = function(route) {
+    route = route.split("#");
+
+    var controllerName = route[0];
+    var actionName = route[1];
+    var controller = this.getController(controllerName);
+    var action = this.getAction(controller, actionName);
+
+    this.invoke(this.app.before);
+    this.invoke(controller.before);
+    this.invoke(action);
+    this.invoke(controller.after);
+    this.invoke(this.app.after);
+  };
+
+  // Return the controller for the specified name.
+  // Return an empty object otherwise.
+  Dispatcher.prototype.getController = function(name) {
+    return this.app[name] || {};
+  };
+
+  // Return a action function.
+  // Considers the alias for some names.
+  Dispatcher.prototype.getAction = function(controller, name) {
+    var action = controller[name];
+    var alias = Dispatcher.ALIASES[name];
+
+    if (!action && controller[alias]) {
+      action = controller[alias];
+    }
+
+    return action;
+  };
+
+  Dispatcher.turbolinks = function(app) {
+    try {
+      console.warn("Dispatcher.turbolinks is deprecated; call Dispatcher.init instead.");
+    } catch (e) { /* no-op */ }
+
+    Dispatcher.init(app);
+  };
+
+  // Execute the specified callback when defined.
+  Dispatcher.prototype.invoke = function(callback) {
+    callback && callback();
+  };
+
+  // Expose the interface.
+  return {
+    run: Dispatcher.run,
+    compat: Dispatcher.compat,
+    init: Dispatcher.init,
+    turbolinks: Dispatcher.turbolinks,
+    aliases: Dispatcher.ALIASES
+  };
+})();
