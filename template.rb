@@ -157,6 +157,12 @@ inject_into_file "app/controllers/application_controller.rb",
 # init guard
 run "bundle exec guard init livereload"
 
+run "mv spec/spec_helper.rb spec/.spec_helper_backup"
+get_file "spec/spec_helper.rb"
+
+run "mv spec/rails_helper.rb spec/.rails_helper_backup"
+get_file "spec/rails_helper.rb"
+
 generate "migration add_name_to_admins name"
 
 run "bundle binstubs rspec-core"
@@ -167,3 +173,4 @@ git :init
 
 puts "=================================="
 puts "CONFIGURE THE DATABASE.YML AND MIGRATE"
+puts "CHECK SPECS HELPERS spec/rails_helper.rb spec/rails_helper.rb"
