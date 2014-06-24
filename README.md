@@ -1,6 +1,8 @@
 rails-template
 ==============
 
+[![Code Climate](https://codeclimate.com/github/stulzer/rails-template.png)](https://codeclimate.com/github/stulzer/rails-template)
+
 Template for Rails 4
 
 Usage
