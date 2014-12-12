@@ -19,6 +19,7 @@ gem 'pg'
 group :development do
   gem 'spring'
   gem 'pry-rails'
+  gem 'thin'
 end
 
 group :test do
