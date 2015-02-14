@@ -8,4 +8,4 @@ Template for Rails 4
 Usage
 ==============
 
-rails new app -d postgresql -Tm https://raw.githubusercontent.com/stulzer/rails-template/master/template.rb
+rails new app -d postgresql -Tm https://raw.githubusercontent.com/stulzer/rails-template/dmi-template/template.rb
