@@ -1,9 +1,5 @@
-/********************************************************************
-*
-* Custom functions for application
-*
-********************************************************************/
-
+// Custom functions for application
+// -------------------------
 @function remove-unit($number) {
   $unit: unit($number);
   $one: 1;
