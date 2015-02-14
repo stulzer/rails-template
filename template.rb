@@ -14,11 +14,12 @@ get_file "Gemfile"
 get_file "app/views/layouts/application.html.erb"
 
 # basic sass files
-get_file "app/assets/stylesheets/normalize.css.scss"
-get_file "app/assets/stylesheets/bootstrap/functions.css.scss"
-get_file "app/assets/stylesheets/bootstrap/mixins.css.scss"
+get_file "app/assets/stylesheets/utils/_normalize.scss"
+get_file "app/assets/stylesheets/utils/_bootstrap.scss"
+get_file "app/assets/stylesheets/utils/_functions.scss"
+get_file "app/assets/stylesheets/utils/_mixins.scss"
 get_file "app/assets/stylesheets/application.css"
-get_file "app/assets/stylesheets/application-module.css.scss"
+get_file "app/assets/stylesheets/application-module.scss"
 
 # basic db configuration
 get_file "config/database.yml"
