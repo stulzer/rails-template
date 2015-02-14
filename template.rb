@@ -6,7 +6,7 @@ def template_url
   "https://github.com/stulzer/rails-template/raw/dmi-template"
 end
 
-run "rm Gemfile app/views/layouts/application.html.erb config/database.yml app/assets/stylesheets/application.css"
+run "rm Gemfile app/views/layouts/application.html.erb config/database.yml app/assets/stylesheets/application.css app/assets/javascripts/application.js"
 
 get_file "Gemfile"
 
@@ -20,6 +20,10 @@ get_file "app/assets/stylesheets/utils/_functions.scss"
 get_file "app/assets/stylesheets/utils/_mixins.scss"
 get_file "app/assets/stylesheets/application.css"
 get_file "app/assets/stylesheets/application-module.scss"
+
+# basic js files
+get_file "app/assets/javascripts/application.js"
+get_file "app/assets/javascripts/bootstrap.js"
 
 # basic db configuration
 get_file "config/database.yml"
