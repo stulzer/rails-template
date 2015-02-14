@@ -5,35 +5,6 @@
 @import "bootstrap/functions.css.scss";
 @import "bootstrap/mixins.css.scss";
 
-// responsiveness
-@import "tablet.css.scss";
-@import "mobile-wide.css.scss";
-@import "mobile.css.scss";
-
 body {
   font-size: 100%/1.5;
-}
-
-p#alert{
-  width: 100%;
-  font: 14px Arial, Verdana, Tahoma;
-  float: left;
-  position: relative;
-  padding: 10px 10px 10px 35px;
-  color: darken(#ca6b1c, 15%);
-  @include border-radius(2px);
-  border: 1px solid darken(#ca6b1c, 15%);
-  margin: 10px 0;
-}
-
-p#notice{
-  width: 100%;
-  font: 14px Arial, Verdana, Tahoma;
-  float: left;
-  position: relative;
-  padding: 10px 10px 10px 35px;
-  color: darken(#769d2b, 15%);
-  @include border-radius(2px);
-  border: 1px solid darken(#769d2b, 15%);
-  margin: 10px 0;
 }

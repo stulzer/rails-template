@@ -1,24 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
 
-gem 'uglifier'
-gem 'sass-rails', '~> 4.0.3'
-gem 'coffee-rails'
+gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder'
-gem 'font-awesome-sass'
 
-gem 'devise'
-gem 'menu_builder'
-
-gem 'nokogiri'
 gem 'pg'
 
 group :development do
   gem 'spring'
-  gem 'pry-rails'
 end
 
 group :test do
@@ -30,6 +21,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
