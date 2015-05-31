@@ -8,24 +8,6 @@ end
 
 run 'rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml config/database.yml'
 
-# basic db configuration
-get_file 'config/database.yml'
-
-
-puts 'shiiiiiiiiiiiiiiiiiiiiiit'
-
-inject_into_file 'config/database.yml', after: 'port: 5432' do <<-CODE
-
-development:
-  <<: *defaults
-  database: #{app_name}_development
-
-test: &test
-  <<: *defaults
-  database: #{app_name}_test
-CODE
-end
-
 initializer 'generators.rb', <<-CODE
 module #{app_name.camelize}
   class Application < Rails::Application
@@ -66,6 +48,7 @@ end
 CODE
 
 get_file 'Gemfile'
+get_file 'config/database.yml'
 
 # locales
 get_file 'config/locales/en/rails.yml'
@@ -189,6 +172,18 @@ inject_into_file 'app/controllers/application_controller.rb',
   '  respond_to :html',
   after: 'protect_from_forgery with: :exception'
 
+inject_into_file 'config/database.yml', after: 'port: 5432' do <<-CODE
+
+development:
+  <<: *defaults
+  database: #{app_name.gsub(/-/, '_')}_development
+
+test: &test
+  <<: *defaults
+  database: #{app_name.gsub(/-/, '_')}_test
+CODE
+end
+
 # Improve README
 get_file 'README.md_example'
 run 'mv README.md_example README.md'
@@ -208,9 +203,13 @@ generate 'migration add_name_to_admins name'
 run 'bundle binstubs rspec-core'
 run 'bundle binstubs guard'
 
+rake 'db:create'
+rake 'db:migrate'
+
 # git
 git :init
+git add: '.'
+git commit: %Q{ -m 'First commit' }
 
 puts '=================================='
-puts 'CONFIGURE THE DATABASE.YML AND MIGRATE'
 puts 'CHECK SPECS HELPERS spec/rails_helper.rb spec/rails_helper.rb'
