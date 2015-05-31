@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.1'
 
 gem 'uglifier'
 gem 'sass-rails', '~> 5.0'
@@ -18,7 +18,6 @@ gem 'pg'
 
 group :development do
   gem 'spring'
-  gem 'pry-rails'
   gem 'thin'
 end
 
@@ -31,6 +30,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
