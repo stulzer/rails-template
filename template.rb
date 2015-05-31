@@ -42,8 +42,7 @@ CODE
 initializer 'asset_pipeline.rb', <<-CODE
 module #{app_name.camelize}
   class Application < Rails::Application
-    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.precompile += [ 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]
   end
 end
 CODE
@@ -138,7 +137,6 @@ get_file "app/helpers/admin_helper.rb"
 run "rm app/assets/javascripts/application.js"
 get_file "app/assets/javascripts/application.js"
 get_file "app/assets/javascripts/dispatcher.js"
-get_file "app/assets/javascripts/html5.js"
 get_file "app/assets/javascripts/jquery.validate.js"
 run "mkdir -p app/assets/javascripts/validate/localization"
 get_file "app/assets/javascripts/validate/localization/messages_pt_BR.js"
