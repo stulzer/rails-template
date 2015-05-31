@@ -8,6 +8,46 @@ end
 
 run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml config/database.yml"
 
+initializer 'generators.rb', <<-CODE
+module #{app_name.camelize}
+  class Application < Rails::Application
+    config.generators do |g|
+      g.test_framework :rspec, fixture: false, views: false
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+    end
+  end
+end
+CODE
+
+initializer 'action_mailer.rb', <<-CODE
+module #{app_name.camelize}
+  class Application < Rails::Application
+    config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  end
+end
+CODE
+
+initializer 'localization.rb', <<-CODE
+module #{app_name.camelize}
+  class Application < Rails::Application
+    config.time_zone = 'Brasilia'
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/*.{rb,yml}').to_s]
+    config.i18n.enforce_available_locales = false
+    config.i18n.available_locales = [:en, :'pt-BR']
+    config.i18n.default_locale = :'pt-BR'
+  end
+end
+CODE
+
+initializer 'asset_pipeline.rb', <<-CODE
+module #{app_name.camelize}
+  class Application < Rails::Application
+    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  end
+end
+CODE
+
 get_file "Gemfile"
 
 # locales
@@ -94,13 +134,6 @@ get_file "app/views/admin/admins/confirm_destroy.js.erb"
 # admin helper
 get_file "app/helpers/admin_helper.rb"
 
-# aditional assets files
-inject_into_file "config/application.rb",
-  "\n\n\n    config.time_zone = \"Brasilia\" \n    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/*.{rb,yml}').to_s] \n    
-    config.i18n.enforce_available_locales = false \n
-    config.i18n.available_locales = [:en, :\"pt-BR\"] \n    config.i18n.default_locale = :\"pt-BR\" \n\n\n\n    # aditional assets \n    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]\n    # Fonts path \n    config.assets.paths << Rails.root.join(\"app\", \"assets\", \"fonts\")",
-  after: "# config.time_zone = 'Central Time (US & Canada)'"
-
 # basic js files
 run "rm app/assets/javascripts/application.js"
 get_file "app/assets/javascripts/application.js"
@@ -109,15 +142,6 @@ get_file "app/assets/javascripts/html5.js"
 get_file "app/assets/javascripts/jquery.validate.js"
 run "mkdir -p app/assets/javascripts/validate/localization"
 get_file "app/assets/javascripts/validate/localization/messages_pt_BR.js"
-
-application <<-GENERATORS
-config.generators do |g|
-      g.test_framework :rspec, fixture: false, views: false
-      g.fixture_replacement :factory_girl, dir: "spec/factories"
-    end
-
-    config.action_mailer.default_url_options = { host: "localhost:3000" }
-GENERATORS
 
 # bundling
 run "bundle install"
@@ -146,7 +170,7 @@ inject_into_file "config/routes.rb",
       end
     end
     root to: 'admins#index'
-  end\n\n",
+  end",
   after: "devise_for :admins"
 
 # adding html responder
