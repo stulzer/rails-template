@@ -1,3 +1,5 @@
+require 'pry'
+
 def get_file(file)
   get "#{template_url}/#{file}", file
 end
