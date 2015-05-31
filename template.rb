@@ -169,6 +169,18 @@ inject_into_file 'config/routes.rb', after: 'devise_for :admins' do <<-'RUBY'
 RUBY
 end
 
+inject_into_file 'config/database.yml', after: 'devise_for :admins' do <<-CODE
+
+development:
+  <<: *defaults
+  database: #{app_name}_development
+
+test: &test
+  <<: *defaults
+  database: #{app_name}_test
+CODE
+end
+
 # adding html responder
 inject_into_file 'app/controllers/application_controller.rb',
   '  respond_to :html',

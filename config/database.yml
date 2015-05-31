@@ -6,15 +6,3 @@ defaults: &defaults
   password:
   host: localhost
   port: 5432
-
-development:
-  <<: *defaults
-  database: app_development
-
-test: &test
-  <<: *defaults
-  database: app_test
-
-production:
-  <<: *defaults
-  database: app_production
