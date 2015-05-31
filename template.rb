@@ -205,6 +205,7 @@ run 'bundle binstubs guard'
 
 rake 'db:create'
 rake 'db:migrate'
+rake 'db:test:prepare'
 
 # git
 git :init
