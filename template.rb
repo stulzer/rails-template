@@ -180,8 +180,8 @@ RUBY
 end
 
 # adding html responder
-inject_into_file 'app/controllers/application_controller.rb',
-  '  respond_to :html',
+inject_into_file 'app/controllers/application_controller.rb', "
+  respond_to :html",
   after: 'protect_from_forgery with: :exception'
 
 # Improve README
