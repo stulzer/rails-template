@@ -11,6 +11,20 @@ run 'rm Gemfile app/views/layouts/application.html.erb app/helpers/application_h
 # basic db configuration
 get_file 'config/database.yml'
 
+sleep 20
+
+inject_into_file 'config/database.yml', after: 'port: 5432' do <<-CODE
+
+development:
+  <<: *defaults
+  database: #{app_name}_development
+
+test: &test
+  <<: *defaults
+  database: #{app_name}_test
+CODE
+end
+
 initializer 'generators.rb', <<-CODE
 module #{app_name.camelize}
   class Application < Rails::Application
@@ -49,18 +63,6 @@ module #{app_name.camelize}
   end
 end
 CODE
-
-inject_into_file 'config/database.yml', after: 'port: 5432' do <<-CODE
-
-development:
-  <<: *defaults
-  database: #{app_name}_development
-
-test: &test
-  <<: *defaults
-  database: #{app_name}_test
-CODE
-end
 
 get_file 'Gemfile'
 
