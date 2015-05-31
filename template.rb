@@ -9,7 +9,7 @@ end
 run "rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml config/database.yml"
 
 initializer 'misc_config.rb', <<-CODE
-module #{Rails.application.class.name.split('::').first.underscore}
+module #{binding.pry}
   class Application < Rails::Application
     config.generators do |g|
       g.test_framework :rspec, fixture: false, views: false
