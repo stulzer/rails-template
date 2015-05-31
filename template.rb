@@ -104,7 +104,7 @@ run "mkdir -p app/assets/javascripts/validate/localization"
 get_file "app/assets/javascripts/validate/localization/messages_pt_BR.js"
 
 initializer 'misc_config.rb', <<-CODE
-module #{application_name}
+module #{app_name}
   class Application < Rails::Application
     config.generators do |g|
       g.test_framework :rspec, fixture: false, views: false
