@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Stulzer.com - Admin</title>
-    <%= stylesheet_link_tag    "admin/module", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "admin/module", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "admin/module", media: "all", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -57,7 +56,7 @@
             <div class="has-icons contacts">
               <%= link_to "#" do %>
                 <%= icon "envelope" %>
-                <span><%= Admin.count %></span>
+                <span>2</span>
               <% end %>
             </div>
 
@@ -99,5 +98,6 @@
     </div><!-- end of contents -->
     <div id="avgrund-content" class="avgrund-popup"></div>
     <div class="avgrund-cover"></div>
+    <%= javascript_include_tag "admin/module", "data-turbolinks-track" => true %>
   </body>
 </html>
