@@ -9,7 +9,7 @@ end
 run 'rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml config/database.yml'
 
 initializer 'generators.rb', <<-CODE
-module #{app_name.camelize}
+module #{app_name.gsub(/-/, '_').camelize}
   class Application < Rails::Application
     config.generators do |g|
       g.test_framework :rspec, fixture: false, views: false
@@ -20,7 +20,7 @@ end
 CODE
 
 initializer 'action_mailer.rb', <<-CODE
-module #{app_name.camelize}
+module #{app_name.gsub(/-/, '_').camelize}
   class Application < Rails::Application
     config.action_mailer.default_url_options = { host: 'localhost:3000' }
   end
@@ -28,7 +28,7 @@ end
 CODE
 
 initializer 'internationalization.rb', <<-CODE
-module #{app_name.camelize}
+module #{app_name.gsub(/-/, '_').camelize}
   class Application < Rails::Application
     config.time_zone = 'Brasilia'
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/*.{rb,yml}').to_s]
@@ -40,7 +40,7 @@ end
 CODE
 
 initializer 'asset_pipeline.rb', <<-CODE
-module #{app_name.camelize}
+module #{app_name.gsub(/-/, '_').camelize}
   class Application < Rails::Application
     config.assets.precompile += [ 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]
   end
