@@ -12,44 +12,46 @@
  *= require font-awesome
 */
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,latin-ext");
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,latin-ext');
 
-html, body{
+// misc
+@import '../misc/_mixins.scss';
+@import 'misc/_normalize.scss';
+@import 'misc/_vars.scss';
+
+// UI related
+@import 'ui/_buttons.scss';
+@import 'ui/_confirmable.scss';
+@import 'ui/_forms.scss';
+@import 'ui/_header.scss';
+@import 'ui/_index.scss';
+@import 'ui/_markdown.scss';
+@import 'ui/_nav.scss';
+
+// vendor
+@import 'vendor/_meny.scss';
+@import 'vendor/_avgrund.scss';
+
+html, body {
   height: 100%;
   overflow: hidden;
 }
 
-body{
+body {
   font-family: 'Open Sans', sans-serif;
-}
-
-@import "vars.css.scss";
-@import "normalize.css.scss";
-@import "../bootstrap/mixins.css.scss";
-@import "meny.css.scss";
-@import "avgrund.css.scss";
-@import "header.css.scss";
-@import "nav.css.scss";
-@import "index.css.scss";
-@import "confirmable.css.scss";
-@import "buttons.css.scss";
-@import "forms.css.scss";
-@import "markdown.css.scss";
-
-body{
   @include gradient(#222, #111);
 }
 
-body p{
+body p {
   line-height: 1.5;
   margin-bottom: 15px;
 }
 
-div.right{
+div.right {
   float: right;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   text-rendering: optimizelegibility;
@@ -59,11 +61,11 @@ h1, h2, h3, h4, h5, h6{
   border-bottom: 1px dotted $main-color;
 }
 
-div.contents div.content{
+div.contents div.content {
   padding: 0 10px 0 15px;
 }
 
-div.actions{
+div.actions {
   width: 100%;
   float: left;
   position: relative;
@@ -72,17 +74,17 @@ div.actions{
   padding: 10px;
   border-top: 1px solid #ccc;
 
-  a{
+  a {
     line-height: 22px;
     display: inline-block;
   }
 }
 
-p#notice, p#alert{
+p#notice, p#alert {
   @include border-radius(3px);
 }
 
-p#notice{
+p#notice {
   @extend .button-green;
   float: left;
   position: relative;
@@ -92,7 +94,7 @@ p#notice{
 
 }
 
-p#alert{
+p#alert {
   @extend .button-red;
   float: left;
   position: relative;
@@ -101,17 +103,17 @@ p#alert{
   margin: 20px 0 10px 0;
 }
 
-#error_explanation{
-  h2{
+#error_explanation {
+  h2 {
     display: none;
   }
 
-  ul{
+  ul {
     list-style: none;
     margin-bottom: 30px;
   }
 
-  ul li{
+  ul li {
     @extend .button-red;
   }
 }
@@ -136,7 +138,7 @@ p#alert{
     };
 }
 
-#loading-page{
+#loading-page {
   width: 100%;
   height: 100%;
   float: left;
@@ -145,7 +147,7 @@ p#alert{
   left: 0;
   background: rgba(0,0,0,0.4);
   z-index: 9999;
-  p{
+  p {
     width: 140px;
     height: 30px;
     color: #fff;
@@ -156,7 +158,7 @@ p#alert{
     margin-top: -15px;
     margin-left: -70px;
   }
-  i{
+  i {
     margin-right: 10px;
     float: left;
     -moz-animation: spinoffPulse 1s infinite linear;
@@ -164,6 +166,6 @@ p#alert{
   }
 }
 
-i.fa{
+i.fa {
   padding: 0 5px 0 0;
 }

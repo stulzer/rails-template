@@ -377,14 +377,14 @@ table {
 /*
  * Remove the outline.
  */
-input, object, textarea{
+input, object, textarea {
 	outline: none;
 }
 
 /*
  * textareas don't resize anymore.
  */
-textarea{
+textarea {
 	resize: none;
 }
 

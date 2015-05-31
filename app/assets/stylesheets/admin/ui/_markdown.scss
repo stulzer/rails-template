@@ -1,14 +1,14 @@
-.for-preview{
+.for-preview {
   display: none;
 }
 
-div.md-editor{
+div.md-editor {
   width: 520px;
   float: left;
   position: relative;
 }
 
-div.md-header{
+div.md-header {
   width: 502px;
   float: left;
   position: relative;
@@ -17,12 +17,12 @@ div.md-header{
   margin-bottom: 5px;
 }
 
-div.md-header .btn-group, div.md-header .btn-small{
+div.md-header .btn-group, div.md-header .btn-small {
   float: left;
   position: relative;
 }
 
-div.md-header .btn-small{
+div.md-header .btn-small {
   float: left;
   position: relative;
   margin-right: 1px;
@@ -30,16 +30,16 @@ div.md-header .btn-small{
   color: #fff;
   border: 5px solid lighten($main-color, 10%);
 
-  &:hover{
+  &:hover {
     background: $main-color;
   }
 }
 
-div.md-header .btn-group{
+div.md-header .btn-group {
   margin-right: 10px;
 }
 
-div.md-header .icon{
+div.md-header .icon {
   font-family: 'FontAwesome';
   float: left;
   position: relative;
@@ -50,38 +50,38 @@ div.md-header .icon{
 
 div.md-header {
 
-  .icon-bold{
-    &:before{
+  .icon-bold {
+    &:before {
       content: "\f032";
     }
   }
 
-  .icon-italic{
-    &:before{
+  .icon-italic {
+    &:before {
       content: "\f033";
     }
   }
 
-  .icon-font{
-    &:before{
+  .icon-font {
+    &:before {
       content: "\f031";
     }
   }
 
-  .icon-globe{
-    &:before{
+  .icon-globe {
+    &:before {
       content: "\f0ac";
     }
   }
 
-  .icon-picture{
-    &:before{
+  .icon-picture {
+    &:before {
       content: "\f03e";
     }
   }
 
-  .icon-list{
-    &:before{
+  .icon-list {
+    &:before {
       content: "\f0ca";
     }
   }

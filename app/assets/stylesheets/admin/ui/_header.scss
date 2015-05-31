@@ -1,4 +1,4 @@
-header.main{
+header.main {
   width: 100%;
   float: left;
   position: relative;
@@ -9,25 +9,25 @@ header.main{
   color: #fff;
 }
 
-header.main a{
+header.main a {
   color: #fff;
   text-decoration: none;
 }
 
-header.main div.has-icons{
+header.main div.has-icons {
   padding-right: 20px;
 
   background: rgba(0,0,0,.1);
 }
 
-header.main div.has-icons, header.main div.has-icons i, header.main p{
+header.main div.has-icons, header.main div.has-icons i, header.main p {
   float: left;
   position: relative;
   height: 60px;
   line-height: 60px;
 }
 
-header.main i{
+header.main i {
   display: block;
   text-align: center;
   width: 30px;
@@ -36,12 +36,12 @@ header.main i{
   margin-left: 10px;
 }
 
-header.main div.has-icons p{
+header.main div.has-icons p {
   margin: 0;
   text-align: center;
 }
 
-header.main div.admin{
+header.main div.admin {
   float: left;
   position: relative;
   padding: 0 0 0 20px;
@@ -50,12 +50,12 @@ header.main div.admin{
   cursor: pointer;
   min-width: 220px;
 
-  ul{
+  ul {
     display: none;
   }
 }
 
-header.main div.admin small{
+header.main div.admin small {
   font-size: 13px;
   line-height: 12px;
   height: 12px;
@@ -63,7 +63,7 @@ header.main div.admin small{
   margin-top: 10px;
 }
 
-header.main div.admin p{
+header.main div.admin p {
   font-size: 18px;
   line-height: 30px;
   height: 30px;
@@ -72,7 +72,7 @@ header.main div.admin p{
   margin: 0 60px 0 0;
 }
 
-header.main div.admin i{
+header.main div.admin i {
   width: 60px;
   height: 20px;
   line-height: 20px;
@@ -82,7 +82,7 @@ header.main div.admin i{
   margin-top: 30px;
 }
 
-header.main div.admin ul{
+header.main div.admin ul {
   background: #fff;
   border: 1px solid #e2e2e2;
   width: 90%;
@@ -92,15 +92,15 @@ header.main div.admin ul{
   z-index: 15;
 }
 
-header.main div.admin ul li{
+header.main div.admin ul li {
   line-height: 30px;
 }
 
-header.main div.admin ul li ~ li{
+header.main div.admin ul li ~ li {
   border-top: 1px solid #e2e2e2;
 }
 
-header.main div.admin ul i{
+header.main div.admin ul i {
   color: #000;
   display: block;
   width: 20px;
@@ -112,11 +112,11 @@ header.main div.admin ul i{
   padding: 10px 10px;
 }
 
-header.main div.admin ul i{
+header.main div.admin ul i {
   margin: 0 10px 0 0;
 }
 
-header.main div.admin ul span{
+header.main div.admin ul span {
   color: #000;
   display: block;
   height: 20px;
@@ -124,23 +124,23 @@ header.main div.admin ul span{
   display: inline-block;
 }
 
-header.main div.admin:hover{
-  ul{
+header.main div.admin:hover {
+  ul {
     display: block;
   }
 }
 
-header.main div.contacts, header.main div.contacts p, header.main div.contacts i{
+header.main div.contacts, header.main div.contacts p, header.main div.contacts i {
   background: $green;
 }
 
-header.main div.contacts span{
+header.main div.contacts span {
   background: darken($green, 15%);
   padding: 10px;
   border-radius: 10%;
 }
 
-header.main div.contacts{
+header.main div.contacts {
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
 }

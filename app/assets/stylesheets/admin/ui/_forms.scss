@@ -1,14 +1,14 @@
-form, form div.field{
+form, form div.field {
   width: 100%;
   float: left;
   position: relative;
 }
 
-form div.field{
+form div.field {
   margin-bottom: 20px;
 }
 
-form div.field label{
+form div.field label {
   width: 180px;
   float: left;
   position: relative;
@@ -19,7 +19,7 @@ form div.field label{
   line-height: 30px;
 }
 
-form div.field div.for-radio{
+form div.field div.for-radio {
   width: 100%;
   float: left;
   position: relative;
@@ -29,32 +29,32 @@ form div.field input[type="password"],
 form div.field input[type="text"],
 form div.field input[type="file"],
 form div.field select,
-form div.field textarea{
+form div.field textarea {
   width: 500px;
   border: 1px solid #ccc;
   padding: 5px;
 
   @include transition(all .5s ease);
 
-  &:focus{
+  &:focus {
     border: 1px solid $orange;
     @include box-shadow(0 0 2px $orange);
     outline: none;
   }
 
-  &.error{
+  &.error {
     border: 1px solid $red;
     @include box-shadow(0 0 2px $red);
     outline: none;
   }
 }
 
-form div.field textarea{
+form div.field textarea {
   height: 400px;
   line-height: 1.5;
 }
 
-form div.field input[type="radio"], form div.field input[type="checkbox"]{
+form div.field input[type="radio"], form div.field input[type="checkbox"] {
   float: left;
   position: relative;
   text-align: right;
@@ -62,22 +62,22 @@ form div.field input[type="radio"], form div.field input[type="checkbox"]{
   height: 20px;
 }
 
-form div.field input[type="radio"]{
+form div.field input[type="radio"] {
   margin: 7px 20px 7px 170px;
 }
 
-form div.field label.radio, form div.field label.checkbox{
+form div.field label.radio, form div.field label.checkbox {
   text-align: left;
   float: left;
   position: relative;
 }
 
 form div.actions button,
-form div.actions input{
+form div.actions input {
   margin-left: 190px;
 }
 
-form div.actions button input{
+form div.actions button input {
   // reseting input inside button
   margin: 0;
   border: 0 solid transparent;
@@ -89,7 +89,7 @@ form div.actions button input{
   background: inherit;
 }
 
-form div.field label.error{
+form div.field label.error {
   width: auto;
   float: left;
   text-align: center;
@@ -106,7 +106,7 @@ form div.field label.error{
 
   z-index: 2;
 
-  &:before{
+  &:before {
     width: 0px;
     height: 0px;
     border-style: solid;
@@ -121,7 +121,7 @@ form div.field label.error{
   }
 }
 
-form div.field div.tooltip{
+form div.field div.tooltip {
   width: auto;
   float: left;
   text-align: center;
@@ -138,7 +138,7 @@ form div.field div.tooltip{
 
   z-index: 1;
 
-  &:before{
+  &:before {
     width: 0px;
     height: 0px;
     border-style: solid;
@@ -153,11 +153,11 @@ form div.field div.tooltip{
   }
 }
 
-form div.has-current-picture{
+form div.has-current-picture {
   margin-bottom: 90px;
 }
 
-form div.field div.current-picture{
+form div.field div.current-picture {
   width: 80px;
   height: 80px;
   float: right;
@@ -170,7 +170,7 @@ form div.field div.current-picture{
 
   padding: 10px;
 
-  &:before{
+  &:before {
     width: 0px;
     height: 0px;
     border-style: solid;
@@ -184,7 +184,7 @@ form div.field div.current-picture{
     @include transition(all .3s ease-in-out);
   }
 
-  img{
+  img {
     width: 100%;
     float: left;
     position: relative;
@@ -197,12 +197,12 @@ form div.field div#banner-thumb {
   float: right;
 }
 
-form #product-pictures{
+form #product-pictures {
   display: inline-block;
   width: 520px;
   margin-left: 200px;
 
-  img{
+  img {
     float: left;
     position: relative;
     width: 150px;
@@ -211,11 +211,11 @@ form #product-pictures{
   }
 }
 
-form div.field input.file-field-multiple{
+form div.field input.file-field-multiple {
   display: none;
 }
 
-form div.field label.file-field-multiple{
+form div.field label.file-field-multiple {
   @include border-radius(10px);
   @include box-shadow(0 0 10px #ccc);
 
@@ -234,7 +234,7 @@ form div.field label.file-field-multiple{
   line-height: 180px;
 }
 
-form div.field label.file-field-multiple span{
+form div.field label.file-field-multiple span {
   float: left;
   width: 100%;
   display: block;
@@ -242,7 +242,7 @@ form div.field label.file-field-multiple span{
   line-height: 70px;
 }
 
-form div.field label.file-field-multiple i{
+form div.field label.file-field-multiple i {
   font-size: 100px;
   float: left;
   width: 100%;
@@ -252,7 +252,7 @@ form div.field label.file-field-multiple i{
   line-height: 100px;
 }
 
-form div.upload{
+form div.upload {
   width: 100%;
   float: left;
   position: relative;
@@ -269,7 +269,7 @@ form div.upload{
   margin-bottom: 30px;
 }
 
-form div.upload span{
+form div.upload span {
   z-index: 99;
   color: #fff;
   float: left;
@@ -279,7 +279,7 @@ form div.upload span{
   text-shadow: 1px 1px 1px #999;
 }
 
-form div.progress{
+form div.progress {
   width: 99%;
   float: left;
   position: relative;
@@ -298,7 +298,7 @@ form div.progress{
   border: 1px solid $main-color;
 }
 
-form div.progress div.bar{
+form div.progress div.bar {
   float: left;
   position: relative;
   
@@ -323,7 +323,7 @@ form div.progress div.bar{
   background-size: 30px 30px;
 }
 
-form div.progress div.bar{
+form div.progress div.bar {
   -webkit-animation:progress-bar-stripes 2s linear infinite;
   -moz-animation:progress-bar-stripes 2s linear infinite;
   -ms-animation:progress-bar-stripes 2s linear infinite;
@@ -331,47 +331,47 @@ form div.progress div.bar{
   animation:progress-bar-stripes 2s linear infinite;
 }
 
-@-webkit-keyframes progress-bar-stripes{
-  from{
+@-webkit-keyframes progress-bar-stripes {
+  from {
     background-position: 30px 0;
   } 
-  to{
+  to {
     background-position:0 0;
   }
 }
 
-@-moz-keyframes progress-bar-stripes{
-  from{
+@-moz-keyframes progress-bar-stripes {
+  from {
     background-position: 30px 0;
   } 
-  to{
+  to {
     background-position:0 0;
   }
 }
 
-@-ms-keyframes progress-bar-stripes{
-  from{
+@-ms-keyframes progress-bar-stripes {
+  from {
     background-position: 30px 0;
   } 
-  to{
+  to {
     background-position:0 0;
   }
 }
 
-@-o-keyframes progress-bar-stripes{
-  from{
+@-o-keyframes progress-bar-stripes {
+  from {
     background-position:0 0;
   } 
-  to{
+  to {
     background-position: 30px 0;
   }
 }
 
-@keyframes progress-bar-stripes{
-  from{
+@keyframes progress-bar-stripes {
+  from {
     background-position: 30px 0;
   } 
-  to{
+  to {
     background-position:0 0;
   }
 }

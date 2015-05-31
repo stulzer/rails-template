@@ -1,4 +1,4 @@
-.button{
+.button {
   border: 5px solid $grey;
   color: #fff  !important;
   padding: 3px 8px;
@@ -7,94 +7,94 @@
 
   @include transition(all .8s ease-in-out);
 
-  &:before{
+  &:before {
     color: #fff;
     margin-right: 10px;
   }
 
-  &:hover{
+  &:hover {
     background: darken($grey, 10%);
   }
 }
 
-.button-red{
+.button-red {
   @extend .button;
   border: 5px solid $red;
   background: $red;
-  &:hover{
+  &:hover {
     background: darken($red, 10%);
   }
 }
 
-.button-green{
+.button-green {
   @extend .button;
   border: 5px solid $green;
   background: $green;
 
-  &:hover{
+  &:hover {
     background: darken($green, 10%);
   }
 }
 
-.button-blue{
+.button-blue {
   @extend .button;
   border: 5px solid $main-color;
   background: $main-color;
-  &:hover{
+  &:hover {
     background: darken($main-color, 10%);
   }
 }
 
-.button-cyan{
+.button-cyan {
   @extend .button;
   border: 5px solid $cyan;
   background: $cyan;
-  &:hover{
+  &:hover {
     background: darken($cyan, 10%);
   }
 }
 
-.button-orange{
+.button-orange {
   @extend .button;
   border: 5px solid $orange;
   background: $orange;
-  &:hover{
+  &:hover {
     background: darken($orange, 10%);
   }
 }
 
-.button-black{
+.button-black {
   @extend .button;
   border: 5px solid $black;
   background: $black;
-  &:hover{
+  &:hover {
     background: darken($black, 10%);
   }
 }
 
-.button-pink{
+.button-pink {
   @extend .button;
   border: 5px solid $pink;
   background: $pink;
-  &:hover{
+  &:hover {
     background: darken($pink, 10%);
   }
 }
 
-.button-purple{
+.button-purple {
   @extend .button;
   border: 5px solid $purple;
   background: $purple;
-  &:hover{
+  &:hover {
     background: darken($purple, 10%);
   }
 }
 
-.button-yellow{
+.button-yellow {
   @extend .button;
   border: 5px solid $yellow;
   background: $yellow;
-  &:hover{
+  &:hover {
     background: darken($yellow, 10%);
   }
 }

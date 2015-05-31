@@ -1,50 +1,50 @@
-ul.list, ul.list li{
+ul.list, ul.list li {
   width: 100%;
   float: left;
   position: relative;
 }
 
-ul.list{
+ul.list {
   @include border-radius(4px); 
   border: 1px solid #ccc;
   list-style: none;
   margin-bottom: 20px;
 }
 
-ul.list li{
+ul.list li {
   height: 50px;
   line-height: 50px;
   padding: 0 10px;
 
-  a{
+  a {
     color: $main-color;
     @include transition(all .5s ease-in-out);
-    &:hover{
+    &:hover {
       color: darken($main-color, 15%);
     }
   }
 }
 
-ul.list li ~ li{
+ul.list li ~ li {
   border-top: 1px solid #ccc;
 }
 
-ul.list li.odd{
+ul.list li.odd {
   background: #fafafa;
 }
 
-ul.list li.even{
+ul.list li.even {
   background: #fff;
 }
 
-ul.list span.sku{
+ul.list span.sku {
   width: 10%;
   float: left;
   position: relative;
   text-align: center;
 }
 
-ul.list span.name{
+ul.list span.name {
   width: 48%;
   padding: 0 1%;
 
@@ -60,14 +60,14 @@ ul.list span.name{
   margin-right: 10px;
 }
 
-ul.list span.price{
+ul.list span.price {
   width: 10%;
   float: left;
   position: relative;
   text-align: center;
 }
 
-ul.list span.available{
+ul.list span.available {
   font-family: 'FontAwesome';
   width: 5%;
   float: left;
@@ -75,19 +75,19 @@ ul.list span.available{
   text-align: center;
 }
 
-ul.list span.green{
+ul.list span.green {
   color: $green;
 }
 
-ul.list span.red{
+ul.list span.red {
   color: $red;
 }
 
-ul.list li.product{
+ul.list li.product {
   padding: 0 10px 0 0;
 }
 
-h3.list-head{
+h3.list-head {
   width: 100%;
   float: left;
   position: relative;
@@ -101,32 +101,32 @@ h3.list-head{
   padding-bottom: 3px;
 }
 
-h3.list-head span{
+h3.list-head span {
   float: left;
   position: relative;
   text-align: center;
 }
 
-h3.list-head span.sku{
+h3.list-head span.sku {
   width: 10%;
 }
 
-h3.list-head span.name{
+h3.list-head span.name {
   width: 49%;
   text-align: left;
   padding-left: 1%;
   margin-right: 10px;
 }
 
-h3.list-head span.price{
+h3.list-head span.price {
   width: 10%;
 }
 
-h3.list-head span.available{
+h3.list-head span.available {
   width: 5%;
 }
 
-div.pagination{
+div.pagination {
   width: 100%;
   float: left;
   position: relative;
@@ -134,13 +134,13 @@ div.pagination{
   padding-right: 5px;
 }
 
-div.pagination nav{
+div.pagination nav {
   float: right;
   position: relative;
   padding-right: 0;
 }
 
-div.pagination nav span{
+div.pagination nav span {
   float: left;
   position: relative;
   display: block;
@@ -149,7 +149,7 @@ div.pagination nav span{
   border-top: 5px solid $main-color;
   margin: 0;
 
-  a{
+  a {
     float: left;
     position: relative;
     display: block;
@@ -159,7 +159,7 @@ div.pagination nav span{
     text-decoration: none;
   }
 
-  &.current{
+  &.current {
     float: left;
     position: relative;
     display: block;
@@ -170,9 +170,9 @@ div.pagination nav span{
     margin-right: -5px;
   }
 
-  &:hover{
+  &:hover {
     background: lighten($main-color, 20%);
-    a{
+    a {
       color: #fff;
       background: lighten($main-color, 20%);
     }
@@ -181,11 +181,11 @@ div.pagination nav span{
   }
 }
 
-div.pagination nav span.prev, div.pagination nav span.next{
+div.pagination nav span.prev, div.pagination nav span.next {
   font-family: 'FontAwesome';
 }
 
-div.pagination nav span.gap{
+div.pagination nav span.gap {
   float: left;
   position: relative;
   display: block;
@@ -194,15 +194,15 @@ div.pagination nav span.gap{
   color: #fff;
 }
 
-div.pagination nav span.next{
+div.pagination nav span.next {
   border-right: 5px solid $main-color;
 }
 
-div.pagination nav span.first, div.pagination nav span.last{
+div.pagination nav span.first, div.pagination nav span.last {
   display: none;
 }
 
-ul.pics{
+ul.pics {
   width: 100%;
   float: left;
   position: relative;
@@ -210,7 +210,7 @@ ul.pics{
   list-style: none;
 }
 
-ul.pics li{
+ul.pics li {
   float: left;
   position: relative;
   width: 23%;
@@ -223,13 +223,13 @@ ul.pics li{
           background-size: 200% auto !important;
 }
 
-ul.pics li img{
+ul.pics li img {
   float: left;
   position: relative;
   width: 100%;
 }
 
-ul.pics div.options{
+ul.pics div.options {
   float: left;
   position: absolute;
   bottom: 0;
@@ -241,7 +241,7 @@ ul.pics div.options{
   background: #000;
   background: rgba(0,0,0,0.5);
   text-align: right;
-  a.delete{
+  a.delete {
     padding: 3px 0 3px 8px;
   }
 }
