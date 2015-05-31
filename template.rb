@@ -139,6 +139,18 @@ get_file 'app/assets/javascripts/validate/localization/messages_pt_BR.js'
 # bundling
 run 'bundle install'
 
+inject_into_file 'config/database.yml', after: 'port: 5432' do <<-CODE
+
+development:
+  <<: *defaults
+  database: #{app_name.gsub(/-/, '_')}_development
+
+test: &test
+  <<: *defaults
+  database: #{app_name.gsub(/-/, '_')}_test
+CODE
+end
+
 # rspec
 generate 'rspec:install'
 
@@ -171,18 +183,6 @@ end
 inject_into_file 'app/controllers/application_controller.rb',
   '  respond_to :html',
   after: 'protect_from_forgery with: :exception'
-
-inject_into_file 'config/database.yml', after: 'port: 5432' do <<-CODE
-
-development:
-  <<: *defaults
-  database: #{app_name.gsub(/-/, '_')}_development
-
-test: &test
-  <<: *defaults
-  database: #{app_name.gsub(/-/, '_')}_test
-CODE
-end
 
 # Improve README
 get_file 'README.md_example'
