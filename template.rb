@@ -8,6 +8,18 @@ end
 
 run 'rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml config/database.yml'
 
+inject_into_file 'config/database.yml', after: 'devise_for :admins' do <<-CODE
+
+development:
+  <<: *defaults
+  database: #{app_name}_development
+
+test: &test
+  <<: *defaults
+  database: #{app_name}_test
+CODE
+end
+
 initializer 'generators.rb', <<-CODE
 module #{app_name.camelize}
   class Application < Rails::Application
@@ -167,18 +179,6 @@ inject_into_file 'config/routes.rb', after: 'devise_for :admins' do <<-'RUBY'
     root to: 'admins#index'
   end
 RUBY
-end
-
-inject_into_file 'config/database.yml', after: 'devise_for :admins' do <<-CODE
-
-development:
-  <<: *defaults
-  database: #{app_name}_development
-
-test: &test
-  <<: *defaults
-  database: #{app_name}_test
-CODE
 end
 
 # adding html responder
