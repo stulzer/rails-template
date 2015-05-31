@@ -27,7 +27,7 @@ module #{app_name.camelize}
 end
 CODE
 
-initializer 'localization.rb', <<-CODE
+initializer 'internationalization.rb', <<-CODE
 module #{app_name.camelize}
   class Application < Rails::Application
     config.time_zone = 'Brasilia'
