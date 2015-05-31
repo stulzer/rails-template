@@ -104,29 +104,27 @@ run "mkdir -p app/assets/javascripts/validate/localization"
 get_file "app/assets/javascripts/validate/localization/messages_pt_BR.js"
 
 initializer 'misc_config.rb', <<-CODE
-  module application_name
-    class Application < Rails::Application
-      config.generators do |g|
-        g.test_framework :rspec, fixture: false, views: false
-        g.fixture_replacement :factory_girl, dir: 'spec/factories'
-      end
-
-      config.action_mailer.default_url_options = { host: 'localhost:3000' }
-
-      config.time_zone = 'Brasilia'
-      config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/*.{rb,yml}').to_s]
-
-      config.i18n.enforce_available_locales = false
-
-      config.i18n.available_locales = [:en, :'pt-BR']
-      config.i18n.default_locale = :'pt-BR'
-
-      # aditional assets
-      config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]
-      # Fonts path
-      config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+module #{application_name}
+  class Application < Rails::Application
+    config.generators do |g|
+      g.test_framework :rspec, fixture: false, views: false
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
+
+    config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+    config.time_zone = 'Brasilia'
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/*.{rb,yml}').to_s]
+
+    config.i18n.enforce_available_locales = false
+
+    config.i18n.available_locales = [:en, :'pt-BR']
+    config.i18n.default_locale = :'pt-BR'
+
+    config.assets.precompile += [ 'html5.js', 'admin/module.js', 'admin/module.css', '.svg', '.eot', '.woff', '.ttf' ]
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
+end
 CODE
 
 # bundling
