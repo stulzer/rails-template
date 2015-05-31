@@ -8,6 +8,9 @@ end
 
 run 'rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml config/database.yml'
 
+# basic db configuration
+get_file 'config/database.yml'
+
 inject_into_file 'config/database.yml', after: 'devise_for :admins' do <<-CODE
 
 development:
@@ -117,9 +120,6 @@ get_file 'app/views/devise/mailer/reset_password_instructions.html.erb'
 get_file 'app/assets/javascripts/admin/module.js'
 get_file 'app/assets/javascripts/admin/meny.js'
 get_file 'app/views/layouts/admin.html.erb'
-
-# basic db configuration
-get_file 'config/database.yml'
 
 # basic admin controllers
 run 'mkdir -p app/controllers/admin'
