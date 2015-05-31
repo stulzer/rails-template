@@ -11,7 +11,8 @@ run 'rm Gemfile app/views/layouts/application.html.erb app/helpers/application_h
 # basic db configuration
 get_file 'config/database.yml'
 
-sleep 20
+
+puts 'shiiiiiiiiiiiiiiiiiiiiiit'
 
 inject_into_file 'config/database.yml', after: 'port: 5432' do <<-CODE
 
