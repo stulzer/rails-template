@@ -178,6 +178,11 @@ inject_into_file "app/controllers/application_controller.rb",
   "\n\n  respond_to :html",
   after: "protect_from_forgery with: :exception"
 
+# Improve README
+get_file "README.md_example"
+run "mv README.md_example README.md"
+run "rm README.rdoc"
+
 # init guard
 run "bundle exec guard init livereload"
 
