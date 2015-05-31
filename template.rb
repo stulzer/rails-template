@@ -150,12 +150,6 @@ generate 'devise:install'
 # devise
 generate 'devise admin'
 
-
-inject_into_file 'name_of_file.rb', after: "#The code goes below this line. Don't forget the Line break at the end\n" do <<-'RUBY'
-  puts "Hello World"
-RUBY
-end
-
 # admin routes
 inject_into_file 'config/routes.rb', after: 'devise_for :admins' do <<-'RUBY'
   , controllers: {
