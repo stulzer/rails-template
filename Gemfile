@@ -1,41 +1,28 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.1'
+gem 'rails', '5.0.0.1'
 
-gem 'uglifier'
-gem 'sass-rails', '~> 5.0'
-gem 'coffee-rails'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder'
-gem 'font-awesome-sass'
-
-gem 'devise'
-gem 'menu_builder'
-
-gem 'nokogiri'
 gem 'pg'
+gem 'puma'
 
 group :development do
+  gem 'listen'
   gem 'spring'
-  gem 'thin'
+  gem 'spring-watcher-listen'
 end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'launchy'
-  gem 'vcr'
+  gem 'simplecov', require: false
   gem 'webmock'
 end
 
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'guard-livereload'
-  gem 'rb-fsevent'
+  gem 'rubocop'
 end
 
-gem 'sdoc', group: :doc
+group :doc do
+  gem 'sdoc'
+end
