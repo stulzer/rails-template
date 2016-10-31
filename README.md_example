@@ -1,41 +1,68 @@
-Application Name
-=========================
+Rails API Project
+==============
+
+Application Checklist
+=====================
+
+- [] GIT Workflow
+- [] API Documentation (Swagger)
 
 ## Dependencies
 
-- Ruby 2.2.0-p0
-- Rails 4.2.0
-- PostgreSQL 9.4
+- Ruby
+- Rails 5.0.0.1
+- Postgresql
 
-## Installing - Backend
+## Contributing
 
-### Copy and put your local database configurations.
-```console
-cp config/database.example.yml config/database.yml
-```
+### A few rules
 
-### Bundling and migrating the database.
+- This project have an [.editorconfig](http://editorconfig.org/) file, make sure you install it EditorConfig on you text editor, IDE or whatever you use to code
+- Best practices (It is not a law, but you should keep it in mind)
+  - Classes should have less than 100 lines
+  - Methods should have less than 5 lines
+  - Methods should receive 4 or less parameters
+  - Do not touch config/application.rb create initializers instead
+  - It will run `rails_best_practices` on CI, if it fails it will break the build (remember to run it locally before commit)
+- Code Coverage
+  - We have a code coverage tool
+  - We will not drop under 95% code coverage
+  - We will not drop our current code coverage
+  - To check our code coverage just open the `coverage/index.html` file
+
+**Important:** Most of these rules are enforced by `Rubocop`.
+
+### Installing
+
+#### Bundling
+
 ```console
 bundle install
-./bin/rake db:create db:migrate
-./bin/rake db:test:prepare
 ```
 
-## Running test suit with RSpec
+### Running
+
+> It is important read and run all docker APIs locally before up the rails server
+
+```console
+./bin/rails s
+```
+
+To learn about the API endpoints run on your terminal:
+
+```
+./bin/rake routes
+```
+
+### Running tests
+
 ```console
 ./bin/rspec
 ```
 
-## Deploying
 
-#### Staging
-
-```
-rake deploy:staging
-```
-
-#### Production
-
-```
-rake deploy:production
+### Lint
+#
+```console
+./bin/rubocop
 ```

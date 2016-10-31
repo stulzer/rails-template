@@ -76,6 +76,7 @@ generate 'rspec:install'
 get_file 'README.md_example'
 run 'rm README.md'
 run 'mv README.md_example README.md'
+get_file '.editorconfig'
 
 # init guard
 run 'bundle exec guard init livereload'
@@ -87,6 +88,7 @@ run 'mv spec/rails_helper.rb spec/.rails_helper_backup'
 get_file 'spec/rails_helper.rb'
 
 run 'bundle binstubs rspec-core'
+run 'bundle binstubs rubocop'
 
 rake 'db:create'
 rake 'db:migrate'
